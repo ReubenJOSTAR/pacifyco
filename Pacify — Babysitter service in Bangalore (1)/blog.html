@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacify Blog — Notes for parents who need a breather</title>
+<meta name="description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FFFBF7;--blush:#FFF1E8;--peach:#FDC7AC;--coral:#F5695A;--coral-d:#E5533E;--rust:#C8402F;--ink:#2D221D;--ink-2:#5A4840;--ink-3:#8A7468}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Poppins',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 40px}
+.script{font-family:'Caveat',cursive;font-weight:600}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--rust)}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.btn-co{background:var(--coral);color:var(--ink)}
+.btn-co:hover{transform:translateY(-2px);box-shadow:0 14px 32px -12px rgba(245,105,90,.85)}
+
+/* nav */
+.nav{position:sticky;top:14px;z-index:50;padding:0 20px;margin-top:14px}
+.nav-bar{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 24px;border-radius:999px;background:rgba(255,251,247,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 40px -20px rgba(45,34,29,.35)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a[aria-current]{color:var(--coral-d)}
+@media (max-width:720px){.nav-links{display:none}}
+
+/* hero */
+.hero{padding:70px 0 40px;position:relative;overflow:clip}
+.hero::before{content:'';position:absolute;right:-10vw;top:-16vw;width:44vw;height:44vw;border-radius:999px;background:var(--blush);z-index:-1}
+.hero h1{font-size:clamp(40px,6vw,84px);line-height:1;font-weight:800;letter-spacing:-.045em;margin-top:14px}
+.hero h1 span{color:var(--coral-d)}
+.hero .script{font-size:clamp(26px,2.6vw,36px);color:var(--ink);margin-top:14px;transform:rotate(-2deg);display:inline-block}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 30px}
+.chip{border:0;font:inherit;font-size:14px;font-weight:600;padding:10px 18px;border-radius:999px;background:var(--blush);color:var(--ink-2);cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.chip:hover{transform:translateY(-1px)}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--cream)}
+
+/* cards */
+.feature{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);border-radius:36px;overflow:hidden;background:var(--ink);color:var(--cream);text-decoration:none;box-shadow:0 40px 80px -40px rgba(45,34,29,.5);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.feature:hover{transform:translateY(-4px)}
+.feature .cover{min-height:380px;position:relative;overflow:hidden}
+.feature .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.feature:hover .cover img{transform:scale(1.05)}
+.feature .body{padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.feature h2{font-size:clamp(26px,2.8vw,40px);line-height:1.1;font-weight:700;letter-spacing:-.025em}
+.feature p{color:rgba(255,251,247,.8);font-size:16px}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--coral);color:var(--ink)}
+.meta{font-size:13px;color:var(--ink-3);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.feature .meta{color:var(--peach)}
+.read{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;color:var(--peach)}
+
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px}
+.card{display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:var(--blush);text-decoration:none;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 30px 60px -36px rgba(45,34,29,.45)}
+.card .cover{aspect-ratio:16/10;overflow:hidden}
+.card .cover img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover .cover img{transform:scale(1.05)}
+.card .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .tag{background:var(--cream);color:var(--rust)}
+.card h3{font-size:21px;line-height:1.25;font-weight:700;letter-spacing:-.015em}
+.card p{font-size:15px;color:var(--ink-2)}
+.card .meta{margin-top:auto;padding-top:6px}
+.empty{padding:56px 30px;margin-top:40px !important;text-align:center;color:var(--ink-2);border:1.5px dashed var(--peach);border-radius:28px;margin-top:22px}
+
+/* article */
+.article{max-width:760px;margin:0 auto;padding:40px 0 30px}
+.back{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;text-decoration:none;color:var(--ink-2);padding:8px 14px 8px 10px;border-radius:999px;background:var(--blush)}
+.back:hover{color:var(--rust)}
+.article h1{font-size:clamp(34px,4.6vw,56px);line-height:1.06;font-weight:800;letter-spacing:-.035em;margin:22px 0 16px}
+.article .lede{font-size:20px;color:var(--ink-2);margin-bottom:20px}
+.article .hero-img{border-radius:32px;overflow:hidden;margin:30px 0 36px;aspect-ratio:16/9;box-shadow:0 40px 80px -46px rgba(45,34,29,.55)}
+.article .hero-img img{width:100%;height:100%;object-fit:cover}
+.prose{font-size:18px;color:#3E302A}
+.prose h2{font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin:38px 0 12px}
+.prose p{margin:0 0 18px}
+.prose ul,.prose ol{margin:0 0 20px;padding-left:22px}
+.prose li{margin-bottom:8px}
+.prose li::marker{color:var(--coral-d);font-weight:700}
+.prose strong{color:var(--ink)}
+.prose blockquote{margin:28px 0;padding:22px 26px;border-radius:24px;background:var(--blush);font-family:'Caveat',cursive;font-weight:600;font-size:30px;line-height:1.15;color:var(--rust)}
+
+.cta{margin:50px 0 10px;border-radius:32px;background:var(--peach);padding:clamp(26px,3.4vw,40px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.cta h3{font-size:clamp(22px,2.2vw,30px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+.cta p{color:#3E302A;font-size:16px;margin-top:6px}
+
+.more{margin-top:60px}
+.more h2{font-size:28px;font-weight:700;letter-spacing:-.02em}
+
+footer{margin-top:90px;background:var(--ink);color:var(--cream);padding:56px 0 36px;border-radius:40px 40px 0 0}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px;font-weight:500}
+.foot-links a{text-decoration:none}
+.foot-contact{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:var(--coral);color:var(--ink);font-weight:600;font-size:15px;text-decoration:none}
+.pill + .pill{background:var(--cream)}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid rgba(253,199,172,.2);font-size:13px;color:rgba(255,251,247,.65)}
+
+.fade{animation:fade .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}*{transition:none !important}}
+
+@media (max-width:960px){
+.wrap{padding:0 20px}
+.feature{grid-template-columns:1fr}
+.feature .cover{min-height:240px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:620px){
+.grid{grid-template-columns:1fr}
+.hero{padding-top:44px}
+.prose{font-size:17px}
+.article .lede{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+<div class="nav-bar">
+<a href="index.html#top" aria-label="Pacify home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
+<div class="nav-links">
+<a href="index.html#services">Services</a>
+<a href="index.html#faq">FAQ</a>
+<a href="blog.html" aria-current="page">Blog</a>
+</div>
+<a class="btn btn-co" href="index.html#waitlist" style="min-height: 44px; padding: 0 20px; font-size: 14px">Join Waitlist <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</nav>
+
+<main id="app" class="wrap"></main>
+
+<footer>
+<div class="wrap">
+<div class="foot">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<img src="assets/15d064d77b947b9ba752a0df711f2007.png" alt="Pacifyco" style="width: 150px; height: auto">
+<div class="foot-links">
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#faq">FAQ</a>
+<a href="blog.html">Blog</a>
+<a href="index.html#waitlist">Join Waitlist</a>
+</div>
+</div>
+<div class="foot-contact">
+<a class="pill" href="tel:+918848873841"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+91 88488 73841</a>
+<a class="pill" href="mailto:query.pacifyco@gmail.com"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>query.pacifyco@gmail.com</a>
+</div>
+</div>
+<div class="copy">© 2026 Pacifyco · Bengaluru</div>
+</div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   BLOG POSTS — to add a post, copy one block below and edit it.
+   `body` is plain HTML: use <h2>, <p>, <ul><li>, <blockquote>.
+   Newest post first; the first post is shown as the featured one.
+------------------------------------------------------------------- */
+const POSTS = [
+  /* Example of a post (copy, remove the comment markers and fill in):
+  {
+    slug: 'my-first-post',
+    title: 'Post title',
+    excerpt: 'One or two lines shown on the card.',
+    category: 'Me-time',
+    date: '6 Oct 2026',
+    read: '4 min read',
+    cover: 'assets/7dd2e04780fcdcd196e0facf338b45bb.jpg',
+    body: `<p>First paragraph…</p><h2>A subheading</h2><p>More text…</p>`
+  },
+  */
+]
+
+const CATS = ['All', ...Array.from(new Set(POSTS.map(p => p.category)))];
+let activeCat = 'All';
+const app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const arrow = '<svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+function card(p){
+  return `<a class="card fade" href="#${p.slug}">
+    <div class="cover"><img src="${p.cover}" alt="" loading="lazy"></div>
+    <div class="body"><span class="tag">${esc(p.category)}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt)}</p>
+    <div class="meta">${esc(p.date)} · ${esc(p.read)}</div></div></a>`;
+}
+
+function renderList(){
+  document.title = 'Pacify Blog — Notes for parents who need a breather';
+  const list = POSTS.filter(p => activeCat === 'All' || p.category === activeCat);
+  const [first, ...rest] = list;
+  app.innerHTML = `
+  <header class="hero fade">
+    <div class="eyebrow">The Pacify Blog</div>
+    <h1>Notes for parents who <span>need a breather.</span></h1>
+    <div class="script">Grab a chai. Stay a while.</div>
+  </header>
+  ${POSTS.length ? `<div class="filters" role="group" aria-label="Filter posts">
+    ${CATS.map(c => `<button class="chip" type="button" aria-pressed="${c === activeCat}" data-cat="${esc(c)}">${esc(c)}</button>`).join('')}
+  </div>` : ''}
+  ${first ? `<a class="feature fade" href="#${first.slug}">
+      <div class="cover"><img src="${first.cover}" alt=""></div>
+      <div class="body"><span class="tag">${esc(first.category)}</span><h2>${esc(first.title)}</h2><p>${esc(first.excerpt)}</p>
+      <div class="meta">${esc(first.date)} · ${esc(first.read)}</div><span class="read">Read the post ${arrow}</span></div>
+    </a>` : `<div class="empty fade"><div class="script" style="font-size: 40px; color: var(--rust); line-height: 1.1">Our first stories are brewing.</div><p style="margin-top: 10px">We’re putting the kettle on and writing up our first posts for parents. Check back soon!</p><a class="btn btn-co" href="index.html#waitlist" style="margin-top: 22px">Join the Waitlist ${arrow}</a></div>`}
+  ${rest.length ? `<div class="grid">${rest.map(card).join('')}</div>` : ''}`;
+  app.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { activeCat = b.dataset.cat; renderList(); }));
+}
+
+function renderPost(p){
+  document.title = p.title + ' — Pacify Blog';
+  const others = POSTS.filter(x => x.slug !== p.slug).slice(0, 3);
+  app.innerHTML = `
+  <article class="article fade">
+    <a class="back" href="#"><svg class="ic" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>All posts</a>
+    <h1>${esc(p.title)}</h1>
+    <p class="lede">${esc(p.excerpt)}</p>
+    <div class="meta"><span class="tag" style="background: var(--blush); color: var(--rust)">${esc(p.category)}</span> ${esc(p.date)} · ${esc(p.read)} · Team Pacify</div>
+    <div class="hero-img"><img src="${p.cover}" alt=""></div>
+    <div class="prose">${p.body}</div>
+    <div class="cta">
+      <div><h3>Ready for a little breathing room?</h3><p>Join the waitlist and we’ll call you to find the right sitter.</p></div>
+      <a class="btn btn-co" href="index.html#waitlist">Join the Waitlist ${arrow}</a>
+    </div>
+  </article>
+  ${others.length ? `<section class="more"><h2>Keep reading</h2><div class="grid">${others.map(card).join('')}</div></section>` : ''}`;
+}
+
+function route(){
+  const slug = decodeURIComponent(location.hash.slice(1));
+  const post = POSTS.find(p => p.slug === slug);
+  if (post) renderPost(post); else renderList();
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>

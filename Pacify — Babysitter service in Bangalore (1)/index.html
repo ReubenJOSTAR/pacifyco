@@ -1,0 +1,763 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pacify — Babysitter service in Bangalore</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pacify matches Bangalore families with trusted, verified part-time babysitters — at home or out and about. From ₹225 per hour per child.">
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+@property --a{syntax:'<number>';inherits:false;initial-value:0}
+@property --b{syntax:'<number>';inherits:false;initial-value:0.0001}
+@property --c{syntax:'<number>';inherits:false;initial-value:2}
+@property --d{syntax:'<number>';inherits:false;initial-value:3}
+@property --dx{syntax:'<length-percentage>';inherits:false;initial-value:0px}
+@property --dy{syntax:'<length-percentage>';inherits:false;initial-value:40px}
+@property --ex{syntax:'<length-percentage>';inherits:false;initial-value:0px}
+@property --ey{syntax:'<length-percentage>';inherits:false;initial-value:-40px}
+@property --ds{syntax:'<number>';inherits:false;initial-value:0}
+body{margin:0;background:#FFFBF7}
+html{scroll-behavior:smooth}
+a{color:#2D221D}a:hover{color:#C8402F}
+.pf{--vhh:var(--vh,100vh);overflow-x:clip;font-family:'Poppins',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.5}
+.pf *{box-sizing:border-box}
+.pf h1,.pf h2,.pf h3,.pf p{margin:0}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 40px}
+.stage{position:sticky;top:0;height:var(--vhh);overflow:hidden}
+.layer{grid-area:1/1}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.script{font-family:'Caveat',cursive;font-weight:600}
+.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.photo{display:block;width:100%;height:100%;object-fit:cover}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s,color .3s;white-space:nowrap}
+.btn-co{background:#F5695A;color:#2D221D}.btn-co:hover{color:#2D221D;transform:translateY(-2px);box-shadow:0 14px 32px -12px rgba(245,105,90,.85)}
+.btn-ln{background:transparent;color:#2D221D;box-shadow:inset 0 0 0 1.5px #2D221D}.btn-ln:hover{background:#2D221D;color:#FFFBF7}
+.btn-dk{background:#2D221D;color:#FFFBF7}.btn-dk:hover{color:#FFFBF7;transform:translateY(-2px)}
+.btn-cr{background:#FFFBF7;color:#2D221D}.btn-cr:hover{color:#2D221D;transform:translateY(-2px)}
+.fx,.hl,.grow,.fillx,.filly{--t:clamp(0,(var(--p,0) - var(--a))/(var(--b) - var(--a)),1);--o:clamp(0,(var(--p,0) - var(--c))/(var(--d) - var(--c)),1)}
+.fx{opacity:calc(var(--t) - var(--o));transform:translate3d(calc((1 - var(--t))*var(--dx) + var(--o)*var(--ex)),calc((1 - var(--t))*var(--dy) + var(--o)*var(--ey)),0) scale(calc(1 - (1 - var(--t))*var(--ds)));will-change:opacity,transform}
+.hl{opacity:calc(.24 + .76*(var(--t) - var(--o)))}
+.grow{clip-path:circle(calc(var(--t)*85%) at 50% 50%)}
+.fillx{transform:scaleX(var(--t));transform-origin:left center}
+.filly{transform:scaleY(var(--t));transform-origin:center top}
+.pf[data-js] [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.pf[data-js] [data-reveal].slow{transition-duration:1.6s}
+.pf[data-js] [data-reveal][data-in]{opacity:1;transform:none}
+.nav{position:fixed;top:14px;left:0;right:0;z-index:50;padding:0 20px;pointer-events:none}
+.nav-bar{pointer-events:auto;max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 10px 10px 26px;border-radius:999px;background:rgba(255,251,247,.84);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);box-shadow:0 10px 40px -20px rgba(45,34,29,.35)}
+.nav-links{display:flex;gap:30px;font-size:14px;font-weight:500}
+.nav-links a{text-decoration:none}
+.burger{display:none;width:48px;height:48px;border-radius:999px;border:0;background:#FFF1E8;color:#2D221D;align-items:center;justify-content:center;cursor:pointer}
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:#F5695A;transform:scaleX(var(--gp,0));transform-origin:left;z-index:60}
+.cue-line{width:1.5px;height:56px;background:rgba(45,34,29,.18);position:relative;overflow:hidden}
+.cue-line::after{content:'';position:absolute;left:0;top:-40%;width:100%;height:40%;background:#F5695A;animation:cue 2.2s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes cue{to{top:110%}}
+@keyframes floaty{50%{transform:translateY(-12px)}}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#FFFBF7;color:#2D221D;border-radius:999px;padding:9px 16px 9px 12px;font-size:14px;font-weight:500;box-shadow:0 10px 30px -14px rgba(45,34,29,.5)}
+.bubble{background:#FFF1E8;color:#2D221D;border-radius:30px 30px 30px 8px;padding:18px 28px;font-weight:500;font-size:clamp(20px,2.3vw,34px);box-shadow:0 20px 50px -24px rgba(0,0,0,.6);white-space:nowrap}
+.bubble.r{border-radius:30px 30px 8px 30px}
+.bubble.sm{font-size:clamp(15px,1.4vw,20px);padding:12px 20px;background:rgba(255,241,232,.16);color:#FDC7AC;box-shadow:none}
+.word{font-weight:700;font-size:clamp(30px,3.6vw,56px);line-height:1.12;letter-spacing:-.02em}
+.mock{background:#FFFFFF;border-radius:28px;padding:28px;box-shadow:0 40px 80px -40px rgba(45,34,29,.4);width:100%;max-width:460px}
+.field{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:16px;background:#FFF1E8;font-size:15px}
+.field span:first-child{color:#6E5A50}
+.av{width:52px;height:52px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:17px;flex:none}
+.slot{font-size:13px;font-weight:500;padding:7px 12px;border-radius:999px;background:#FFF1E8}
+.tcard{position:sticky;border-radius:36px;padding:48px;min-height:400px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;box-shadow:0 30px 70px -40px rgba(45,34,29,.35)}
+.qa{border-top:1.5px solid rgba(45,34,29,.14)}
+.qa:last-child{border-bottom:1.5px solid rgba(45,34,29,.14)}
+.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0;font-size:clamp(19px,1.8vw,24px);font-weight:600;min-height:44px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .pm{width:44px;height:44px;border-radius:999px;background:#FFFBF7;display:flex;align-items:center;justify-content:center;transition:transform .4s,background .3s;flex:none}
+.qa[open] summary .pm{transform:rotate(45deg);background:#F5695A}
+.qa .ans{padding:0 64px 28px 0;font-size:17px;color:#5A4840;max-width:620px}
+.in{width:100%;height:54px;border-radius:14px;border:1.5px solid #E6D2C5;background:#FFFFFF;padding:0 16px;font:inherit;font-size:16px;color:#2D221D;outline:none;transition:border-color .2s,box-shadow .2s}
+.in:focus{border-color:#F5695A;box-shadow:0 0 0 4px rgba(245,105,90,.18)}
+.lbl{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:#5A4840}
+.tab{flex:1;min-height:48px;border-radius:999px;border:0;background:transparent;font:inherit;font-weight:600;font-size:15px;color:#5A4840;cursor:pointer;transition:background .3s,color .3s}
+.tab[aria-pressed=true]{background:#2D221D;color:#FFFBF7}
+.h-track{display:flex;height:100%;align-items:stretch;transform:translateX(calc(var(--p,0)*-150vw));will-change:transform}
+.kb{transform:scale(calc(1.16 - var(--p,0)*.16))}
+.mobile-menu{pointer-events:auto;max-width:1240px;margin:10px auto 0;background:#FFFBF7;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:4px;box-shadow:0 20px 50px -20px rgba(45,34,29,.4)}
+.mobile-menu a{padding:14px 12px;font-weight:600;text-decoration:none;border-radius:14px}
+@media (prefers-reduced-motion:reduce){.pf[data-js] [data-reveal]{transition:none}.kb{transform:none}.cue-line::after{animation:none}}
+@media (max-width:960px){
+.nav-links{display:none}.burger{display:inline-flex}.nav-cta{display:none}
+.wrap{padding:0 22px}
+.hero-grid{grid-template-columns:1fr !important;gap:36px !important}
+.hero-img{height:46vh !important;max-height:420px}
+.r-grid{grid-template-columns:1fr !important;grid-template-rows:auto auto;align-content:center;gap:28px !important}
+.r-stack{width:230px !important;height:290px !important;margin:0 auto}
+.half-l{inset:0 0 50% 0 !important}.half-r{inset:50% 0 0 0 !important}
+.half-photo{display:none !important}
+.half-in{padding:84px 22px 20px !important;gap:16px !important}
+.half-r .half-in{padding:24px 22px !important}
+.word{font-size:26px}
+.h-scene{height:auto !important}
+.h-stage{position:static !important;height:auto !important;overflow:visible !important}
+.h-track{transform:none !important;flex-direction:column;height:auto}
+.h-panel{width:100% !important;min-height:0 !important;padding:72px 22px !important;flex-direction:column !important}
+.h-panel .h-img{width:100% !important;height:58vh !important}
+.how-grid{grid-template-columns:1fr !important;gap:20px !important}
+.how-num{font-size:110px !important}
+.how-mock{display:none !important}
+.trust-grid{grid-template-columns:1fr !important}
+.trust-left{position:static !important}
+.tcard{padding:32px;min-height:340px}
+.plus-grid{grid-template-columns:1fr !important;gap:36px !important}
+.split2{grid-template-columns:1fr !important;gap:36px !important}
+.pay-title{font-size:15vw !important}
+.form-grid{grid-template-columns:1fr !important}
+.qa .ans{padding-right:0}
+}
+
+.sec{padding:110px 0}
+.h2{font-size:clamp(34px,4vw,58px);line-height:1.05;font-weight:700;letter-spacing:-0.03em}
+.lead{font-size:clamp(17px,1.35vw,20px);color:#5A4840}
+.num-badge{width:40px;height:40px;border-radius:999px;background:#F5695A;color:#2D221D;font-weight:700;display:flex;align-items:center;justify-content:center}
+.gtk-grid{grid-template-columns:repeat(6,minmax(0,1fr)) !important}
+.gtk{grid-column:span 2;background:#FFF1E8;border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:10px}
+.gtk:nth-child(n+4){grid-column:span 3}
+.gtk-n{font-size:15px;font-weight:700;color:#E5533E}
+.gtk h3{font-size:21px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.gtk p{font-size:16px;color:#5A4840}
+.vcard{border-radius:32px;padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;box-shadow:0 30px 70px -40px rgba(45,34,29,.35)}
+.vcard h3{font-size:clamp(24px,2.2vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-bottom:10px}
+.vcard p{font-size:17px}
+.vicon{width:64px;height:64px;border-radius:20px;display:flex;align-items:center;justify-content:center}
+.plus-item{display:flex;gap:20px;align-items:flex-start;padding:24px 26px;border-radius:24px;background:rgba(255,251,247,.06);border:1px solid rgba(253,199,172,.16)}
+.plus-ic{width:52px;height:52px;border-radius:999px;background:#F5695A;color:#2D221D;display:flex;align-items:center;justify-content:center;flex:none}
+.plus-item h3{font-size:clamp(20px,1.8vw,26px);font-weight:600;letter-spacing:-.01em;line-height:1.2}
+.plus-item p{font-size:16px;color:#FDC7AC;margin-top:4px}
+.step{display:flex;gap:16px;align-items:center;background:#FFFBF7;border-radius:20px;padding:16px 20px;font-size:17px;font-weight:500}
+.step-n{width:40px;height:40px;border-radius:999px;background:#F5695A;color:#2D221D;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+@media (max-width:960px){
+.about-grid,.svc-grid,.ver-grid,.wl-grid,.sit-grid,.gtk-grid{grid-template-columns:1fr !important;gap:24px !important}
+.gtk,.gtk:nth-child(n+4){grid-column:auto}
+.about-stack{max-width:280px !important;height:360px !important}
+.faq-left{position:static !important}
+.sec{padding:80px 0}
+.vcard{min-height:0}
+.hero-note{left:12px !important;top:12px !important}
+}
+
+.story-lead{font-size:clamp(24px,2.5vw,38px);line-height:1.28;font-weight:600;letter-spacing:-0.02em}
+.mark{background-image:linear-gradient(#FDC7AC,#FDC7AC);background-repeat:no-repeat;background-position:0 88%;background-size:0% 42%;transition:background-size 1.2s cubic-bezier(.2,.7,.2,1) .5s;padding:0 2px}
+.mark-w{background-image:linear-gradient(#FFFBF7,#FFFBF7)}
+[data-in] .mark{background-size:100% 42%}
+.pola{position:absolute;width:62%;background:#FFFFFF;padding:12px 12px 46px;border-radius:6px;box-shadow:0 30px 60px -30px rgba(45,34,29,.5)}
+.pola img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:sepia(.35) saturate(.85) contrast(.95)}
+.tape{position:absolute;width:90px;height:28px;background:rgba(253,199,172,.8);z-index:2}
+.draw path{stroke-dasharray:320;stroke-dashoffset:320;transition:stroke-dashoffset 1.2s ease .7s}
+[data-in] .draw path{stroke-dashoffset:0}
+.scard{border-radius:36px;padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:22px;min-height:340px}
+.scard-tag{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+.mini{font-size:14px;font-weight:500;padding:8px 14px;border-radius:999px}
+.belief-icons{display:flex;gap:10px;margin-top:auto}
+.belief-icons span{width:48px;height:48px;border-radius:999px;background:#FFFBF7;color:#C8402F;display:flex;align-items:center;justify-content:center}
+.village-row{display:flex;align-items:flex-end;gap:12px;padding-top:30px}
+.village-row span{width:30px;height:40px;border-radius:15px 15px 6px 6px;position:relative;transform:scale(0);transform-origin:bottom center;transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
+.village-row span::before{content:'';position:absolute;left:50%;top:-26px;width:22px;height:22px;margin-left:-11px;border-radius:999px;background:inherit}
+.village-row span.kid{width:22px;height:28px}
+.village-row span.kid::before{width:16px;height:16px;margin-left:-8px;top:-19px}
+[data-in] .village-row span{transform:none}
+.village-row span:nth-child(1){transition-delay:0.28s}
+.village-row span:nth-child(2){transition-delay:0.36s}
+.village-row span:nth-child(3){transition-delay:0.44s}
+.village-row span:nth-child(4){transition-delay:0.52s}
+.village-row span:nth-child(5){transition-delay:0.60s}
+.village-row span:nth-child(6){transition-delay:0.68s}
+.village-row span:nth-child(7){transition-delay:0.76s}
+@media (max-width:960px){
+.story-1,.story-3{grid-template-columns:1fr !important;gap:28px !important}
+.polaroids{height:270px !important;max-width:290px !important;order:2}
+.scard{min-height:0}
+}
+
+.svc-split{display:flex;gap:18px;height:min(76vh,620px)}
+.svc-p{flex:1 1 0;min-width:0;position:relative;border-radius:36px;overflow:hidden;color:#FFFBF7;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(28px,3vw,44px);box-shadow:0 40px 80px -40px rgba(45,34,29,.5);transition:flex-grow .8s cubic-bezier(.2,.7,.2,1),opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.svc-p:hover{color:#FFFBF7}
+.svc-p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.28) saturate(.82) contrast(.9) brightness(1.04);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.svc-p::before{content:'';position:absolute;inset:0;z-index:0;background:rgba(253,199,172,.14);mix-blend-mode:soft-light;pointer-events:none}
+.svc-p::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,34,29,0) 30%,rgba(45,34,29,.85) 100%)}
+.svc-p > *:not(img){position:relative;z-index:1}
+.svc-split:hover .svc-p{flex-grow:.8}
+.svc-split .svc-p:hover{flex-grow:1.35}
+.svc-p:hover img{transform:scale(1.05)}
+.svc-num{position:absolute !important;top:26px;left:34px;font-size:clamp(70px,8vw,120px);font-weight:800;letter-spacing:-.05em;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,251,247,.85)}
+.svc-chip{position:absolute !important;top:30px;right:30px}
+.svc-body{display:flex;flex-direction:column;gap:12px;max-width:500px}
+.svc-body h3{font-size:clamp(28px,2.8vw,44px);font-weight:700;letter-spacing:-.025em;line-height:1.05}
+.svc-body p{font-size:17px;color:rgba(255,251,247,.88)}
+.svc-go{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;margin-top:6px;color:#FDC7AC}
+@media (max-width:960px){
+.svc-split{flex-direction:column;height:auto}
+.svc-p{min-height:470px;flex:none !important}
+.svc-home-img{object-position:74% 40% !important}
+}
+
+.hud{background:#FFF1E8;border-radius:28px;padding:22px 24px;display:flex;flex-direction:column;gap:14px}
+.segs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.segs i{height:10px;border-radius:6px;background:rgba(45,34,29,.12);position:relative;overflow:hidden}
+.segs i::after{content:'';position:absolute;inset:0;background:#3FA36B;transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.segs i.p::after{background:#F5695A}
+.hud[data-in] .segs i:not(.p)::after{transform:scaleX(1)}
+.hud[data-in] .segs i:nth-child(1)::after{transition-delay:.3s}.hud[data-in] .segs i:nth-child(2)::after{transition-delay:.55s}.hud[data-in] .segs i:nth-child(3)::after{transition-delay:.8s}
+[data-plus=true] .segs i.p::after{transform:scaleX(1)}
+[data-plus=true] .segs i:nth-child(5)::after{transition-delay:.15s}[data-plus=true] .segs i:nth-child(6)::after{transition-delay:.3s}
+.hud-n{display:inline-block;color:#E5533E;font-size:20px;font-weight:800}
+.toggle{display:flex;gap:6px;background:#FFFBF7;border-radius:999px;padding:5px}
+.toggle button{flex:1;min-height:46px;border:0;border-radius:999px;background:transparent;font:inherit;font-weight:600;font-size:15px;color:#5A4840;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .3s,color .3s}
+.toggle button[aria-pressed=true]{background:#2D221D;color:#FFFBF7}
+.toggle button:last-child[aria-pressed=true]{background:#F5695A;color:#2D221D}
+.lvl-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.lvl{border-radius:36px;padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;gap:14px;position:relative;transition:box-shadow .5s,transform .5s}
+.lvl-1{background:#FFF1E8}
+.lvl-2{background:#2D221D;color:#FFFBF7;cursor:pointer}
+[data-plus=true] .lvl-2{box-shadow:0 0 0 3px #F5695A,0 40px 80px -40px rgba(245,105,90,.7);cursor:default}
+.lvl-tag{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+.unlock{white-space:nowrap;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:rgba(255,251,247,.1);color:#FDC7AC;animation:pulse 2s ease-in-out infinite}
+[data-plus=true] .unlock{background:#3FA36B;color:#FFFFFF;animation:none}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(245,105,90,.25)}}
+.bdg{display:flex;gap:16px;align-items:center;padding:16px 18px;border-radius:22px;background:#FFFBF7}
+.bdg h4{margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.bdg p{font-size:15px;color:#5A4840;margin-top:3px}
+.lvl-2 .bdg{background:rgba(255,251,247,.06);border:1px solid rgba(253,199,172,.16);transition:background .5s,border-color .5s}
+.lvl-2 .bdg p{color:#FDC7AC}
+.lvl-2 .bdg > div:last-child{opacity:.6;transition:opacity .5s}
+[data-plus=true] .lvl-2 .bdg > div:last-child{opacity:1}
+[data-plus=true] .lvl-2 .bdg{background:rgba(245,105,90,.12);border-color:rgba(245,105,90,.4)}
+.bdg-medal{width:58px;height:58px;border-radius:18px;flex:none;display:flex;align-items:center;justify-content:center;background:#FDC7AC;color:#C8402F;position:relative;transition:background .5s,color .5s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.lvl-2 .bdg-medal{background:rgba(255,251,247,.1);color:rgba(255,251,247,.45)}
+[data-plus=true] .lvl-2 .bdg-medal{background:#F5695A;color:#2D221D;transform:rotate(-6deg)}
+.bdg-check,.bdg-lock{position:absolute;right:-6px;bottom:-6px;width:24px;height:24px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #FFFBF7}
+.bdg-check{background:#3FA36B;color:#FFFFFF;transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.bdg-lock{background:#5A4840;color:#FFFBF7;box-shadow:0 0 0 3px #2D221D;transition:opacity .3s,transform .3s}
+.lvl-2 .bdg-check{box-shadow:0 0 0 3px #2D221D}
+.lvl-1 .bdg[data-in] .bdg-check{transform:scale(1);transition-delay:.5s}
+[data-plus=true] .lvl-2 .bdg-check{transform:scale(1)}
+[data-plus=true] .bdg-lock{opacity:0;transform:scale(.4)}
+[data-plus=true] .lvl-2 .bdg:nth-of-type(2) .bdg-check{transition-delay:.15s}
+[data-plus=true] .lvl-2 .bdg:nth-of-type(3) .bdg-check,[data-plus=true] .lvl-2 .bdg:nth-of-type(4) .bdg-check{transition-delay:.3s}
+@media (max-width:960px){
+.lvl-head,.lvl-board{grid-template-columns:1fr !important;gap:24px !important}
+.lv-pre{display:none}
+.hero-note{top:auto !important;bottom:76px;left:10px !important;font-size:24px !important;padding:10px 14px 12px !important}
+
+}
+
+.anchor{position:relative;height:0;scroll-margin-top:0}
+[data-page]{position:sticky;top:0;border-radius:40px 40px 0 0;box-shadow:0 -30px 60px -34px rgba(45,34,29,.32);transform:scale(calc(1 - var(--cv,0) * .06));transform-origin:50% 50%;will-change:transform}
+[data-page]::after{content:'';position:absolute;inset:0;border-radius:inherit;background:#2D221D;opacity:calc(var(--cv,0) * .5);pointer-events:none;z-index:20}
+.hero-sec{border-radius:0 !important;box-shadow:none !important}
+.page-foot{position:relative;border-radius:40px 40px 0 0;box-shadow:0 -30px 60px -34px rgba(45,34,29,.4)}
+.faq-sec .qa summary .pm{background:#FFF1E8}
+@media (max-width:960px){[data-page],.page-foot{border-radius:28px 28px 0 0}}
+@media (prefers-reduced-motion:reduce){[data-page]{transform:none}[data-page]::after{display:none}}
+
+.wwd-lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:6px;padding-top:24px;border-top:1px solid rgba(253,199,172,.2)}
+.wwd-h{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#FDC7AC;margin-bottom:14px}
+.ptr{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.ptr li{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:500;line-height:1.3}
+.ptr li .ic{color:#3FA36B;flex:none}
+.pl-tag{margin-left:auto;flex:none;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:#F5695A;color:#2D221D}
+@media (max-width:960px){.wwd-lists{grid-template-columns:1fr;gap:22px}}
+
+.wwd-lists{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:30px;margin-top:6px;padding-top:24px;border-top:1px solid rgba(253,199,172,.2);opacity:1 !important;transform:none !important}
+.wwd-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.xp-n{white-space:nowrap;flex:none;font-size:12px;font-weight:700;color:#2D221D;background:#3FA36B;color:#FFFFFF;padding:3px 10px;border-radius:999px;opacity:0;transform:scale(.6);transition:opacity .4s 1.9s,transform .5s cubic-bezier(.3,1.6,.5,1) 1.9s}
+.xp{height:8px;border-radius:8px;background:rgba(255,251,247,.12);overflow:hidden;margin-bottom:18px}
+.xp i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#F5695A,#FDC7AC);transform:scaleX(0);transform-origin:left;transition:transform 1.6s cubic-bezier(.4,0,.2,1) .3s}
+.badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 10px}
+.badge{display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;font-size:13px;font-weight:500;line-height:1.25;color:#FFFBF7}
+.medal{width:60px;height:60px;border-radius:999px;display:flex;align-items:center;justify-content:center;position:relative;background:#F5695A;color:#2D221D;box-shadow:inset 0 -4px 0 rgba(45,34,29,.22),0 0 0 4px rgba(245,105,90,.18);transform:scale(.4) rotate(-20deg);opacity:.25;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s}
+.badge:nth-child(even) .medal{background:#FDC7AC;box-shadow:inset 0 -4px 0 rgba(45,34,29,.18),0 0 0 4px rgba(253,199,172,.16)}
+.tk{position:absolute;right:-4px;bottom:-4px;width:22px;height:22px;border-radius:999px;background:#3FA36B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #2D221D;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.8,.5,1)}
+.badge:hover .medal{transform:scale(1.08) rotate(-6deg) !important}
+.rules{display:flex;flex-direction:column;gap:9px}
+.rule{display:flex;align-items:center;gap:12px;padding:10px 14px 10px 10px;border-radius:16px;background:rgba(255,251,247,.06);border:1.5px dashed rgba(253,199,172,.35);font-size:14.5px;font-weight:500;line-height:1.3;position:relative;opacity:0;transform:translateX(40px) rotate(4deg);transition:opacity .5s,transform .6s cubic-bezier(.2,1.2,.4,1),background .3s,border-color .3s}
+.rule-ic{width:36px;height:36px;border-radius:12px;background:#FFFBF7;color:#C8402F;display:flex;align-items:center;justify-content:center;flex:none}
+.rule-n{position:absolute;top:-8px;right:10px;font-size:10px;font-weight:700;letter-spacing:.08em;background:#2D221D;color:#FDC7AC;padding:1px 6px;border-radius:6px}
+.rule:hover{background:rgba(245,105,90,.14);border-color:#F5695A;border-style:solid}
+[data-in].wwd-lists .xp i{transform:scaleX(1)}
+[data-in].wwd-lists .xp-n{opacity:1;transform:none}
+[data-in].wwd-lists .medal{transform:none;opacity:1}
+[data-in].wwd-lists .tk{transform:scale(1)}
+[data-in].wwd-lists .rule{opacity:1;transform:rotate(var(--r,0deg))}
+[data-in].wwd-lists .rule:hover{transform:translateY(-2px) rotate(0deg);transition-delay:0s}
+.rule:nth-child(1){--r:-1deg}.rule:nth-child(2){--r:.8deg}.rule:nth-child(3){--r:-.6deg}.rule:nth-child(4){--r:1deg}.rule:nth-child(5){--r:-.8deg}
+.badge:nth-child(1) .medal{transition-delay:0.43s}.badge:nth-child(1) .tk{transition-delay:0.73s}
+.badge:nth-child(2) .medal{transition-delay:0.61s}.badge:nth-child(2) .tk{transition-delay:0.91s}
+.badge:nth-child(3) .medal{transition-delay:0.79s}.badge:nth-child(3) .tk{transition-delay:1.09s}
+.badge:nth-child(4) .medal{transition-delay:0.97s}.badge:nth-child(4) .tk{transition-delay:1.27s}
+.badge:nth-child(5) .medal{transition-delay:1.15s}.badge:nth-child(5) .tk{transition-delay:1.45s}
+.badge:nth-child(6) .medal{transition-delay:1.33s}.badge:nth-child(6) .tk{transition-delay:1.63s}
+.rule:nth-child(1){transition-delay:0.55s}
+.rule:nth-child(2){transition-delay:0.70s}
+.rule:nth-child(3){transition-delay:0.85s}
+.rule:nth-child(4){transition-delay:1.00s}
+.rule:nth-child(5){transition-delay:1.15s}
+@media (max-width:960px){.wwd-lists{grid-template-columns:1fr !important;gap:28px}}
+@media (prefers-reduced-motion:reduce){.medal,.tk,.rule,.xp i,.xp-n{transition:none !important}}
+
+.foot-call{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;padding:34px 36px;border-radius:32px;background:rgba(255,251,247,.05);border:1.5px dashed rgba(253,199,172,.3)}
+.foot-links{display:flex;flex-direction:column;gap:12px}
+.foot-pill{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:999px;background:#F5695A;color:#2D221D !important;font-weight:600;font-size:17px;text-decoration:none;transition:transform .3s cubic-bezier(.3,1.6,.5,1),box-shadow .3s}
+.foot-pill + .foot-pill{background:#FFFBF7}
+.foot-pill:hover{transform:translateY(-2px) rotate(-1.5deg);box-shadow:0 14px 30px -14px rgba(245,105,90,.8)}
+@media (max-width:960px){.foot-call{padding:26px 22px}.foot-links{width:100%}.foot-pill{justify-content:center;font-size:16px}}
+</style>
+</helmet>
+
+<div data-root="1" class="pf" style="background: #FFFBF7; color: #2D221D; position: relative">
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Main">
+<div class="nav-bar">
+<a href="#top" aria-label="Pacifyco home" style="display: flex; align-items: center"><img src="./assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto; display: block"></a>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#faq">FAQ</a>
+<a href="blog.html">Blog</a>
+</div>
+<div style="display: flex; align-items: center; gap: 8px">
+<a class="btn btn-co nav-cta" href="#waitlist" onClick="{{ setParent }}" style="min-height: 46px; padding: 0 22px; font-size: 15px">Join Waitlist
+<svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<button class="burger" type="button" aria-label="Open menu" onClick="{{ toggleMenu }}">
+<svg class="ic" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</div>
+<sc-if value="{{ menu }}" hint-placeholder-val="{{ false }}">
+<div class="mobile-menu">
+<a href="#about" onClick="{{ closeMenu }}">About</a>
+<a href="#services" onClick="{{ closeMenu }}">Services</a>
+<a href="#faq" onClick="{{ closeMenu }}">FAQ</a>
+<a href="blog.html">Blog</a>
+<a class="btn btn-co" href="#waitlist" onClick="{{ setParentClose }}" style="margin-top: 8px">Join the Waitlist</a>
+</div>
+</sc-if>
+</nav>
+
+<!-- 01 — BANNER -->
+<div id="top" class="anchor" aria-hidden="true"></div>
+<section data-page="1" data-scene="exit" class="hero-sec" style="background: #FFFBF7; display: flex; align-items: center; padding: 130px 0 56px; overflow: clip">
+<div aria-hidden="true" style="position: absolute; right: -12vw; top: -14vw; width: 52vw; height: 52vw; border-radius: 999px; background: #FFF1E8; transform: translateY(calc(var(--p,0) * 120px))"></div>
+<div aria-hidden="true" style="position: absolute; right: 30vw; top: 9vw; width: 9vw; height: 9vw; border-radius: 999px; background: #FDC7AC; opacity: .7; transform: translateY(calc(var(--p,0) * 220px))"></div>
+<div class="wrap hero-grid" style="position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 64px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div class="eyebrow" style="color: #C8402F">Babysitter service in Bangalore</div>
+<h1 style="font-size: clamp(40px, 5vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em">Babysitter community for parents who are <span style="color: #E5533E">selflessly dedicated to their little ones</span></h1>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a class="btn btn-co" href="#waitlist" onClick="{{ setParent }}">Join the Waitlist
+<svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-ln" href="#waitlist" onClick="{{ setSitter }}">Become a Sitter</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14px; font-weight: 500; color: #5A4840">
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg class="ic" viewBox="0 0 24 24" style="color: #E5533E"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>Verified sitters</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg class="ic" viewBox="0 0 24 24" style="color: #E5533E"><rect x="3.5" y="5" width="17" height="15" rx="3"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>Part-time bookings</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><svg class="ic" viewBox="0 0 24 24" style="color: #E5533E"><circle cx="12" cy="7" r="3"></circle><path d="M7 20v-3a5 5 0 0 1 10 0v3"></path></svg>Care for children 2+</span>
+</div>
+</div>
+<div style="position: relative">
+<div class="hero-img" style="height: min(68vh, 640px); border-radius: 320px 320px 40px 40px; overflow: hidden; box-shadow: 0 50px 90px -50px rgba(45,34,29,.55)">
+<img class="photo" src="./assets/hero-2.jpg" alt="A smiling sitter helping a toddler down a slide at an indoor play area" style="transform: scale(calc(1.04 + var(--p,0) * .16)); object-position: 58% 22%">
+</div>
+<div class="script hero-note" style="position: absolute; left: -64px; top: 56%; font-size: clamp(28px, 2.6vw, 40px); line-height: 1; color: #2D221D; transform: rotate(-8deg); background: #FFFBF7; padding: 14px 20px 18px; border-radius: 22px; box-shadow: 0 20px 40px -24px rgba(45,34,29,.45); animation: floaty 6s ease-in-out infinite">More breathing<br>room for you.
+<svg viewBox="0 0 120 16" style="display: block; width: 110px; margin-top: 6px" aria-hidden="true"><path d="M3 11c30-8 70-10 112-3" fill="none" stroke="#F5695A" stroke-width="3" stroke-linecap="round"></path></svg>
+</div>
+<div class="chip" style="position: absolute; right: -14px; bottom: 44px">
+<span style="width: 10px; height: 10px; border-radius: 999px; background: #3FA36B"></span>Ananya is with Joanna · 2 h left</div>
+</div>
+</div>
+</section>
+
+<!-- 02 — ABOUT PACIFY (our story) -->
+<div id="about" class="anchor" aria-hidden="true"></div>
+<section data-page="1" class="sec" style="background: #FFFBF7; overflow: clip; padding-top: 80px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: clamp(64px, 9vh, 100px)">
+
+<!-- Beat 1: the memory -->
+<div class="story-1" style="display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 72px; align-items: center">
+<div class="polaroids" data-reveal="1" style="position: relative; height: 420px; max-width: 400px; width: 100%; justify-self: center">
+<div class="pola" style="left: 0; top: 30px; transform: rotate(-8deg)">
+<img src="./assets/about-1.jpg" alt="Friends laughing together over dinner" style="object-position: 70% 40%">
+</div>
+<div class="pola" style="right: 0; top: 0; transform: rotate(6deg)">
+<img src="./assets/about-2.jpg" alt="A couple smiling at each other over dinner" style="object-position: 50% 36%">
+</div>
+<div aria-hidden="true" class="tape" style="left: 38%; top: 14px; transform: rotate(-4deg)"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 22px; position: relative">
+<div class="eyebrow" data-reveal="1" style="color: #C8402F">About Pacify</div>
+<div aria-hidden="true" data-reveal="1" style="font-size: 140px; line-height: .6; height: 52px; font-weight: 800; color: #FDC7AC">“</div>
+<p data-reveal="1" class="story-lead">Most of us remember how easy it felt when a <span class="mark">favorite cousin</span> or a <span class="mark">friendly neighbor</span> came over to play with our kids. The little ones loved every minute, and we got a much-needed breather.</p>
+</div>
+</div>
+
+<!-- Beat 2: the turn -->
+<div data-reveal="1" style="text-align: center; display: flex; flex-direction: column; align-items: center">
+<h2 style="font-size: clamp(40px, 6vw, 92px); line-height: 1; font-weight: 800; letter-spacing: -0.045em; max-width: 1000px">We want to bring that <span style="position: relative; display: inline-block; color: #E5533E">feeling back.<svg class="draw" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: -14px; width: 100%; height: 22px"><path d="M4 15C70 5 170 3 296 11" fill="none" stroke="#F5695A" stroke-width="5" stroke-linecap="round"></path></svg></span></h2>
+</div>
+
+<!-- Beat 3: what we do / what we believe -->
+<div class="story-3" style="display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr); gap: 24px">
+<div data-reveal="1" class="scard" style="background: #2D221D; color: #FFFBF7">
+<div class="scard-tag" style="background: #F5695A; color: #2D221D">What we do</div>
+<p style="font-size: clamp(22px, 2vw, 30px); line-height: 1.3; font-weight: 600; letter-spacing: -0.015em">Pacify provides babysitter service in Bangalore that matches your family with trusted babysitters who are <span style="color: #FDC7AC">verified, warm, and wonderful with little ones.</span></p>
+<div class="wwd-lists" data-reveal="1">
+<div>
+<div class="wwd-top"><span class="wwd-h">Every sitter is verified</span><span class="xp-n">6/6 cleared</span></div>
+<div class="xp" aria-hidden="true"><i></i></div>
+<div class="badges">
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><rect x="3" y="5" width="18" height="14" rx="3"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14.5 10h4M14.5 13.5h3"></path></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>Identity &amp; address checks</span></div>
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>Police verification</span></div>
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z"></path><path d="M6.5 11.5V16c1.5 1.6 3.4 2.4 5.5 2.4s4-.8 5.5-2.4v-4.5"></path><path d="M21.5 9.5V15"></path></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>Qualification check</span></div>
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4A8 8 0 1 1 20 12z"></path><path d="M12 15.5s-3.2-1.9-3.2-4.1a1.8 1.8 0 0 1 3.2-1.1 1.8 1.8 0 0 1 3.2 1.1c0 2.2-3.2 4.1-3.2 4.1z"></path></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>Psychologist screening</span></div>
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><path d="M6 3v5a4 4 0 0 0 8 0V3"></path><path d="M10 12v2a5 5 0 0 0 10 0v-1"></path><circle cx="20" cy="11" r="2"></circle></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>Health clearance</span></div>
+<div class="badge"><div class="medal"><svg class="ic" viewBox="0 0 24 24" style="width: 26px; height: 26px; stroke-width: 1.6"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M9 6V4.5h6V6M12 10v6M9 13h6"></path></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span></div><span>First aid &amp; CPR training</span></div>
+</div>
+</div>
+<div>
+<div class="wwd-top"><span class="wwd-h">Good to know</span></div>
+<div class="rules">
+<div class="rule"><span class="rule-n">01</span><span class="rule-ic"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke-width: 1.6"><circle cx="12" cy="6" r="2.6"></circle><path d="M8 21v-5l-2-3.5L9 10h6l3 2.5-2 3.5v5"></path></svg></span><span class="rule-t">For children aged 2 and up</span></div>
+<div class="rule"><span class="rule-n">02</span><span class="rule-ic"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke-width: 1.6"><path d="M4 11l8-6.5 8 6.5"></path><path d="M6 9.5V20h12V9.5"></path><circle cx="12" cy="13" r="1.8"></circle><path d="M9.5 19c.4-1.5 1.3-2.3 2.5-2.3s2.1.8 2.5 2.3"></path></svg></span><span class="rule-t">An adult woman of the household present at home</span></div>
+<div class="rule"><span class="rule-n">03</span><span class="rule-ic"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke-width: 1.6"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg></span><span class="rule-t">Outings by mutual agreement</span></div>
+<div class="rule"><span class="rule-n">04</span><span class="rule-ic"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke-width: 1.6"><path d="M3 12V4h8l10 10-8 8L3 12z"></path><circle cx="7.5" cy="8.5" r="1.4"></circle></svg></span><span class="rule-t">Pricing per child</span></div>
+<div class="rule"><span class="rule-n">05</span><span class="rule-ic"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px; stroke-width: 1.6"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg></span><span class="rule-t">Cancel at least 8 hours before</span></div>
+</div>
+</div>
+</div>
+</div>
+<div data-reveal="1" class="scard" style="background: #FDC7AC">
+<div class="scard-tag" style="background: #2D221D; color: #FFFBF7">What we believe</div>
+<p style="font-size: clamp(19px, 1.6vw, 23px); line-height: 1.45; font-weight: 500; color: #2D221D">Parenting is full of love, and it's also exhausting. We believe taking time for <span class="mark mark-w">your hobbies</span>, <span class="mark mark-w">your health</span>, <span class="mark mark-w">your partner</span>, or simply <span class="mark mark-w">a quiet cup of coffee</span> is part of being a happy, healthy parent.</p>
+<div class="belief-icons" aria-hidden="true">
+<span title="Hobbies"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"></path><path d="M14 7l3 3"></path></svg></span>
+<span title="Health"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"></path></svg></span>
+<span title="Partner"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"></path></svg></span>
+<span title="Coffee"><svg class="ic" viewBox="0 0 24 24"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5V9z"></path><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"></path><path d="M8 3.5c0 1 1 1.3 1 2.3M11.5 3.5c0 1 1 1.3 1 2.3"></path></svg></span>
+</div>
+</div>
+</div>
+
+<!-- Beat 4: the village -->
+<div data-reveal="1" class="village" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 26px">
+<div class="village-row" aria-hidden="true">
+<span style="background: #FDC7AC"></span><span style="background: #F5695A"></span><span style="background: #2D221D"></span><span class="kid" style="background: #F5695A"></span><span class="kid" style="background: #FDC7AC"></span><span style="background: #E5533E"></span><span style="background: #FDC7AC"></span>
+</div>
+<p style="font-size: clamp(26px, 3vw, 44px); line-height: 1.2; font-weight: 700; letter-spacing: -0.025em; max-width: 900px">As the saying goes, it takes a village to raise a child and find your balance.</p>
+<div class="script" style="font-size: clamp(34px, 3.4vw, 52px); line-height: 1.1; color: #C8402F; transform: rotate(-2deg)">We'd love to help you find that balance.</div>
+</div>
+
+</div>
+</section>
+
+<!-- 03 — OUR SERVICES -->
+<div id="services" class="anchor" aria-hidden="true"></div>
+<section data-page="1" class="sec" style="background: #FFF1E8">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px">
+<h2 class="h2" data-reveal="1">Our Services</h2>
+<div data-reveal="1" style="display: inline-flex; align-items: center; gap: 10px; font-weight: 500; color: #5A4840"><span style="width: 10px; height: 10px; border-radius: 999px; background: #F5695A"></span>Two ways to get a little help</div>
+</div>
+<div class="svc-split">
+<a href="#waitlist" onClick="{{ setParent }}" data-reveal="1" class="svc-p">
+<img class="svc-home-img" src="./assets/svc-home-3.jpg" alt="A sitter playing with a toddler and his toy truck in the front yard at home" style="object-position: 58% 40%">
+<div class="svc-num" aria-hidden="true">01</div>
+<div class="chip svc-chip"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: #E5533E"><path d="M4 11l8-6.5 8 6.5"></path><path d="M6 9.5V20h12V9.5"></path></svg>At home</div>
+<div class="svc-body">
+<h3>Babysitter at home</h3>
+<p>A trusted sitter comes to your home for a few hours, so you can step out, work, rest, or spend time with your partner.</p>
+<span class="svc-go">Join the waitlist <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+<a href="#waitlist" onClick="{{ setParent }}" data-reveal="1" class="svc-p">
+<img src="./assets/svc-out-2.jpg" alt="A sitter blowing bubbles for a toddler in a garden" style="object-position: 50% 30%">
+<div class="svc-num" aria-hidden="true">02</div>
+<div class="chip svc-chip"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: #E5533E"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>Mall or café</div>
+<div class="svc-body">
+<h3>Out-and-about babysitting</h3>
+<p>Heading to a mall or café? A sitter can come along and keep your little one busy while you shop, work, or catch up with friends.</p>
+<span class="svc-go">Join the waitlist <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+</a>
+</div>
+</div>
+</section>
+
+<!-- 07 — JOIN OUR WAITLIST (how it works + form) -->
+<div id="waitlist" class="anchor" aria-hidden="true"></div>
+<section data-page="1" class="sec" style="background: #FFF1E8">
+<div class="wrap wl-grid" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div class="eyebrow" data-reveal="1" style="color: #C8402F">How it works</div>
+<h2 class="h2" data-reveal="1">Join Our Waitlist</h2>
+<p class="lead" data-reveal="1">Looking for a babysitter? Here's how to book a babysitter in Bangalore with Pacify:</p>
+<ol style="list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px">
+<li data-reveal="1" class="step"><span class="step-n">1</span><span>We'll call you to understand your family's needs.</span></li>
+<li data-reveal="1" class="step"><span class="step-n">2</span><span>We'll share sitter profiles and available time slots that suit you.</span></li>
+<li data-reveal="1" class="step"><span class="step-n">3</span><span>You meet your sitter in a one-on-one interview before anything is confirmed.</span></li>
+<li data-reveal="1" class="step"><span class="step-n">4</span><span>We confirm your booking once you're happy with the match.</span></li>
+</ol>
+</div>
+
+<div data-reveal="1" style="width: 100%; background: #FFFBF7; border-radius: 36px; padding: clamp(22px, 3vw, 38px); text-align: left; box-shadow: 0 30px 70px -40px rgba(45,34,29,.35)">
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 30px 10px">
+<div style="width: 72px; height: 72px; border-radius: 999px; background: #F5695A; color: #2D221D; display: flex; align-items: center; justify-content: center"><svg class="ic" viewBox="0 0 24 24" style="width: 34px; height: 34px; stroke-width: 2"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+<h3 style="font-size: 30px; font-weight: 700; letter-spacing: -0.02em">{{ thanksTitle }}</h3>
+<p style="font-size: 17px; color: #5A4840; max-width: 440px">{{ thanksBody }}</p>
+<button type="button" class="btn btn-ln" onClick="{{ reset }}" style="margin-top: 6px">Add another</button>
+</div>
+</sc-if>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; gap: 6px; background: #FFF1E8; border-radius: 999px; padding: 6px; margin-bottom: 24px" role="group" aria-label="I am">
+<button type="button" class="tab" aria-pressed="{{ isParent }}" onClick="{{ setParent }}">I’m a parent</button>
+<button type="button" class="tab" aria-pressed="{{ isSitter }}" onClick="{{ setSitter }}">I want to be a sitter</button>
+</div>
+<form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 16px">
+<div class="form-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<label class="lbl">Your name<input class="in" name="name" type="text" required="required" placeholder="Riya Thomas" autocomplete="name"></label>
+<label class="lbl">Phone<input class="in" name="phone" type="tel" required="required" placeholder="+91 98xxx xxxxx" autocomplete="tel"></label>
+<label class="lbl" style="grid-column: 1 / -1">Area &amp; city<input class="in" name="city" type="text" required="required" placeholder="Koramangala, Bengaluru"></label>
+</div>
+<button type="submit" class="btn btn-co" disabled="{{ sending }}" style="width: 100%; margin-top: 6px">{{ submitLabel }} <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<sc-if value="{{ errorMsg }}">
+<p style="font-size: 14px; color: #C8402F; text-align: center">{{ errorMsg }}</p>
+</sc-if>
+<p style="font-size: 14px; color: #6E5A50; text-align: center">{{ helper }}</p>
+</form>
+</sc-if>
+</div>
+</div>
+</section>
+
+<!-- 09 — FAQ -->
+<div id="faq" class="anchor" aria-hidden="true"></div>
+<section data-page="1" class="sec faq-sec" style="background: #FFFBF7">
+<div class="wrap split2" style="display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 72px; align-items: start">
+<div class="faq-left" style="position: sticky; top: 130px; display: flex; flex-direction: column; gap: 20px">
+<div class="eyebrow" data-reveal="1" style="color: #C8402F">FAQ</div>
+<h2 class="h2" data-reveal="1">Frequently Asked Questions</h2>
+<div data-reveal="1"><a class="btn btn-co" href="#waitlist" onClick="{{ setParent }}">Join the Waitlist <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+<div data-reveal="1">
+<details class="qa" open="open"><summary>What babysitting services in Bangalore does Pacify offer? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">We offer two services: a babysitter at home for a few hours, and out-and-about babysitting, where a sitter joins you at a mall or café. Both are part-time, so you only book the hours you need.</div></details>
+<details class="qa"><summary>How much does a babysitter in Bangalore cost? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Babysitting charges at Pacify start from ₹225 per hour per child and upwards, plus a small platform fee. We keep pricing simple and transparent, so families can find affordable babysitters without compromising on safety.</div></details>
+<details class="qa"><summary>How do I find a babysitter near me? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Join our waitlist and tell us where you live. We'll match you with local babysitters from your part of Bangalore, share their profiles, and set up a one-on-one interview before you confirm.</div></details>
+<details class="qa"><summary>Can I hire a babysitter for just a few hours? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Yes. Pacify is built for part-time care, whether that's an afternoon to yourself, a work call, or an evening out with your partner.</div></details>
+<details class="qa"><summary>Can I book a babysitter for weekends or evenings? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Yes. Weekends and evenings are often when parents need a break the most, so you can request a weekend babysitter or an evening sitter for date night.</div></details>
+<details class="qa"><summary>How do you verify your babysitters? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Every Pacify sitter goes through identity and address checks, police verification, a qualification check, a one-on-one psychologist screening, a health clearance from a doctor, and first aid and CPR training for children. You also meet your sitter before your first booking.</div></details>
+<details class="qa"><summary>What age groups do your sitters look after? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Our sitters care for toddlers and children aged 2 years and above. We don't currently offer care for babies under 2.</div></details>
+<details class="qa"><summary>Can one sitter look after more than one child? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Yes. Let us know how many children need care, including children from neighboring families, and we'll plan the right support. Pricing is per child.</div></details>
+<details class="qa"><summary>Do you offer a full-time babysitter in Bangalore or live-in nannies? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Not at the moment. Pacify focuses on part-time babysitting, so you get flexible, trusted help for the hours you actually need it.</div></details>
+<details class="qa"><summary>How is Pacify different from a babysitter agency or other babysitting websites? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Agencies mostly place full-time nannies, and most babysitting websites simply list profiles for you to sort through. Pacify focuses on part-time care: we call every family, hand-pick sitter matches, and arrange a one-on-one interview before you book.</div></details>
+<details class="qa"><summary>What if I need to cancel? <span class="pm"><svg class="ic" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></svg></span></summary><div class="ans">Please cancel at least 8 hours before your booking so your sitter can plan their day.</div></details>
+</div>
+</div>
+</section>
+
+<footer class="page-foot" style="background: #2D221D; color: #FFFBF7; padding: 70px 0 40px">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 46px">
+<div class="foot-call">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 560px">
+<div class="script" style="font-size: clamp(30px, 3vw, 44px); line-height: 1.05; color: #F5695A">Got questions? We don’t bite.</div>
+<p style="font-size: 17px; color: rgba(255,251,247,.82)">Parents running on two hours of sleep, or the favourite aunty or uncle on your street who’d make a brilliant sitter, give us a call or drop a line. We love a good chat (almost as much as toddlers love the word “why”).</p>
+</div>
+<div class="foot-links">
+<a class="foot-pill" href="tel:+918848873841"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>+91 88488 73841</a>
+<a class="foot-pill" href="mailto:query.pacifyco@gmail.com"><svg class="ic" viewBox="0 0 24 24" style="width: 20px; height: 20px"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M4 7l8 6 8-6"></path></svg>query.pacifyco@gmail.com</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 36px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<img src="./assets/15d064d77b947b9ba752a0df711f2007.png" alt="Pacifyco" style="width: 170px; height: auto; display: block">
+<p style="font-size: 15px; color: #FDC7AC; letter-spacing: .14em; text-transform: uppercase; line-height: 1.8">Babysitter service<br>in Bangalore</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px 34px; font-size: 15px; font-weight: 500">
+<a href="#about" style="color: #FFFBF7; text-decoration: none">About</a>
+<a href="#services" style="color: #FFFBF7; text-decoration: none">Services</a>
+<a href="#faq" style="color: #FFFBF7; text-decoration: none">FAQ</a>
+<a href="blog.html" style="color: #FFFBF7; text-decoration: none">Blog</a>
+<a href="#waitlist" style="color: #FFFBF7; text-decoration: none">Join Waitlist</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; border-top: 1px solid rgba(253,199,172,.2); padding-top: 24px; font-size: 13px; color: rgba(255,251,247,.65)">
+<span>© 2026 Pacifyco · Bengaluru</span>
+</div>
+</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+// --- EmailJS config -----------------------------------------------------
+// 1. Create a free account at https://www.emailjs.com
+// 2. Add an Email Service (e.g. Gmail) — copy its Service ID below.
+// 3. Create an Email Template with these variables: {{role}}, {{name}},
+//    {{phone}}, {{city}}, {{to_email}} — copy its Template ID below.
+// 4. Account > General > Public Key — copy it below.
+const EMAILJS_PUBLIC_KEY = 'O2FnVAv0TNG_zCX-s';
+const EMAILJS_SERVICE_ID = 'service_4ghi7v6';
+const EMAILJS_TEMPLATE_ID = 'template_hx12jan';
+const WAITLIST_NOTIFY_EMAIL = 'query.pacifyco@gmail.com';
+if (typeof emailjs !== 'undefined') {
+  try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (err) { console.error('[Pacify] EmailJS init failed:', err); }
+}
+class Component extends DCLogic {
+  componentDidMount() {
+    this.root = document.querySelector('[data-root]');
+    if (this.root) this.root.setAttribute('data-js', '');
+    this.tick = () => {
+      if (this.raf) return;
+      this.raf = requestAnimationFrame(() => { this.raf = 0; this.update(); });
+    };
+    this.resize = () => {
+      const h = window.innerHeight;
+      this.vh = h > 1600 ? 900 : h;
+      if (this.root) this.root.style.setProperty('--vh', this.vh + 'px');
+      this.update();
+    };
+    document.addEventListener('scroll', this.tick, { capture: true, passive: true });
+    window.addEventListener('resize', this.resize);
+    this.resize();
+    this.t1 = setTimeout(this.resize, 400);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.tick, { capture: true });
+    window.removeEventListener('resize', this.resize);
+    if (this.raf) cancelAnimationFrame(this.raf);
+    clearTimeout(this.t1);
+  }
+  update() {
+    const vh = this.vh || window.innerHeight;
+    const scenes = document.querySelectorAll('[data-scene]');
+    for (let i = 0; i < scenes.length; i++) {
+      const el = scenes[i];
+      const r = el.getBoundingClientRect();
+      let p;
+      if (el.getAttribute('data-scene') === 'exit') {
+        p = -r.top / Math.max(1, r.height);
+      } else {
+        const span = r.height - vh;
+        p = span > 1 ? -r.top / span : (r.top < 0 ? 1 : 0);
+      }
+      p = Math.min(1, Math.max(0, p));
+      el.style.setProperty('--p', p.toFixed(4));
+    }
+    const pages = document.querySelectorAll('[data-page]');
+    const foot = document.querySelector('.page-foot');
+    for (let i = 0; i < pages.length; i++) {
+      const el = pages[i];
+      const t = Math.min(0, vh - el.offsetHeight);
+      if (el.__t !== t) { el.__t = t; el.style.top = t + 'px'; }
+      const next = pages[i + 1] || foot;
+      let cv = 0;
+      if (next) {
+        const nt = next.getBoundingClientRect().top;
+        const d = Math.max(1, Math.min(vh, el.offsetHeight + t));
+        cv = Math.min(1, Math.max(0, 1 - nt / d));
+      }
+      el.style.setProperty('--cv', cv.toFixed(3));
+    }
+    const rev = document.querySelectorAll('[data-reveal]:not([data-in])');
+    for (let i = 0; i < rev.length; i++) {
+      const r = rev[i].getBoundingClientRect();
+      if (r.top < vh * 0.9 && r.bottom > -60) rev[i].setAttribute('data-in', '');
+    }
+    if (this.root) {
+      const r = this.root.getBoundingClientRect();
+      const gp = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - vh)));
+      this.root.style.setProperty('--gp', gp.toFixed(4));
+    }
+  }
+  renderVals() {
+    const s = this.state || {};
+    const mode = s.mode || 'parent';
+    const isSitter = mode === 'sitter';
+    const sent = !!s.sent;
+    const first = s.name ? ', ' + s.name : '';
+    return {
+      menu: !!s.menu,
+      toggleMenu: () => this.setState({ menu: !s.menu }),
+      closeMenu: () => this.setState({ menu: false }),
+      setParent: () => this.setState({ mode: 'parent', sent: false }),
+      setSitter: () => this.setState({ mode: 'sitter', sent: false, menu: false }),
+      setParentClose: () => this.setState({ mode: 'parent', sent: false, menu: false }),
+      isParent: !isSitter,
+      isSitter: isSitter,
+      sent: sent,
+      notSent: !sent,
+      sending: !!s.sending,
+      errorMsg: s.error || '',
+      submitLabel: s.sending ? 'Sending…' : (isSitter ? 'Become a Pacify Sitter' : 'Join the Pacify Waitlist'),
+      helper: isSitter
+        ? 'We’ll call you to walk through verification and onboarding.'
+        : 'We’ll call you, understand your family’s needs, and help you find the right sitter.',
+      thanksTitle: isSitter ? 'Welcome aboard' + first + '.' : 'You’re on the list' + first + '.',
+      thanksBody: isSitter
+        ? 'Our team will call you to begin verification. Your free time is about to mean a lot to a family.'
+        : 'We’ll call you, understand your family’s needs, and help you find the right sitter. Your breathing room is on its way.',
+      submit: (e) => {
+        e.preventDefault();
+        const form = e.target;
+        let name = '', phone = '', city = '';
+        try {
+          const data = new FormData(form);
+          name = String(data.get('name') || '').trim();
+          phone = String(data.get('phone') || '').trim();
+          city = String(data.get('city') || '').trim();
+        } catch (err) {}
+        const role = isSitter ? 'Babysitter' : 'Parent';
+        this.setState({ sending: true, error: '' });
+        if (typeof emailjs === 'undefined') {
+          console.error('[Pacify] EmailJS SDK did not load; email not sent.');
+          this.setState({ sending: false, error: 'Something went wrong — please call or WhatsApp us directly.' });
+          return;
+        }
+        emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          role: role,
+          name: name,
+          phone: phone,
+          city: city,
+          to_email: WAITLIST_NOTIFY_EMAIL
+        }).then(() => {
+          this.setState({ sent: true, sending: false, name: name.split(' ')[0] });
+        }).catch((err) => {
+          console.error('[Pacify] EmailJS send failed:', err);
+          this.setState({ sending: false, error: 'Something went wrong — please try again or call us directly.' });
+        });
+      },
+      reset: () => this.setState({ sent: false, sending: false, error: '', name: '' }),
+      plusStr: s.plus ? 'true' : 'false',
+      isStd: !s.plus,
+      isPlusTier: !!s.plus,
+      checksDone: s.plus ? 6 : 3,
+      unlockLabel: s.plus ? 'Unlocked ✓' : 'Tap to unlock',
+      setStd: () => this.setState({ plus: false }),
+      setPlusTier: () => this.setState({ plus: true }),
+      goPlus: () => this.setState({ plus: true, menu: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
+
+</body></html>
