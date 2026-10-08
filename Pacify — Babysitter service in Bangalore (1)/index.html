@@ -64,6 +64,8 @@ a{color:#2D221D}a:hover{color:#C8402F}
 .cue-line::after{content:'';position:absolute;left:0;top:-40%;width:100%;height:40%;background:#F5695A;animation:cue 2.2s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes cue{to{top:110%}}
 @keyframes floaty{50%{transform:translateY(-12px)}}
+.fade{animation:fade .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .chip{display:inline-flex;align-items:center;gap:8px;background:#FFFBF7;color:#2D221D;border-radius:999px;padding:9px 16px 9px 12px;font-size:14px;font-weight:500;box-shadow:0 10px 30px -14px rgba(45,34,29,.5)}
 .bubble{background:#FFF1E8;color:#2D221D;border-radius:30px 30px 30px 8px;padding:18px 28px;font-weight:500;font-size:clamp(20px,2.3vw,34px);box-shadow:0 20px 50px -24px rgba(0,0,0,.6);white-space:nowrap}
 .bubble.r{border-radius:30px 30px 8px 30px}
@@ -91,7 +93,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 .kb{transform:scale(calc(1.16 - var(--p,0)*.16))}
 .mobile-menu{pointer-events:auto;max-width:1240px;margin:10px auto 0;background:#FFFBF7;border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:4px;box-shadow:0 20px 50px -20px rgba(45,34,29,.4)}
 .mobile-menu a{padding:14px 12px;font-weight:600;text-decoration:none;border-radius:14px}
-@media (prefers-reduced-motion:reduce){.pf[data-js] [data-reveal]{transition:none}.kb{transform:none}.cue-line::after{animation:none}}
+@media (prefers-reduced-motion:reduce){.pf[data-js] [data-reveal]{transition:none}.kb{transform:none}.cue-line::after{animation:none}.fade{animation:none}}
 @media (max-width:960px){
 .nav-links{display:none}.burger{display:inline-flex}.nav-cta{display:none}
 .wrap{padding:0 22px}
@@ -331,6 +333,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 <div class="nav-links">
 <a href="#services">Services</a>
 <a href="#faq">FAQ</a>
+<a href="sitters.html">Sitters</a>
 <a href="blog.html">Blog</a>
 </div>
 <div style="display: flex; align-items: center; gap: 8px">
@@ -346,6 +349,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 <a href="#about" onClick="{{ closeMenu }}">About</a>
 <a href="#services" onClick="{{ closeMenu }}">Services</a>
 <a href="#faq" onClick="{{ closeMenu }}">FAQ</a>
+<a href="sitters.html">Sitters</a>
 <a href="blog.html">Blog</a>
 <a class="btn btn-co" href="#waitlist" onClick="{{ setParentClose }}" style="margin-top: 8px">Join the Waitlist</a>
 </div>
@@ -357,14 +361,14 @@ a{color:#2D221D}a:hover{color:#C8402F}
 <section data-page="1" data-scene="exit" class="hero-sec" style="background: #FFFBF7; display: flex; align-items: center; padding: 130px 0 56px; overflow: clip">
 <div aria-hidden="true" style="position: absolute; right: -12vw; top: -14vw; width: 52vw; height: 52vw; border-radius: 999px; background: #FFF1E8; transform: translateY(calc(var(--p,0) * 120px))"></div>
 <div aria-hidden="true" style="position: absolute; right: 30vw; top: 9vw; width: 9vw; height: 9vw; border-radius: 999px; background: #FDC7AC; opacity: .7; transform: translateY(calc(var(--p,0) * 220px))"></div>
-<div class="wrap hero-grid" style="position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 64px; align-items: center">
+<div class="wrap hero-grid fade" style="position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 64px; align-items: center">
 <div style="display: flex; flex-direction: column; gap: 28px">
 <div class="eyebrow" style="color: #C8402F">Babysitter service in Bangalore</div>
 <h1 style="font-size: clamp(40px, 5vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em">Babysitter community for parents who are <span style="color: #E5533E">selflessly dedicated to their little ones</span></h1>
 <div style="display: flex; flex-wrap: wrap; gap: 14px">
 <a class="btn btn-co" href="#waitlist" onClick="{{ setParent }}">Join the Waitlist
 <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a class="btn btn-ln" href="#waitlist" onClick="{{ setSitter }}">Become a Sitter</a>
+<a class="btn btn-ln" href="sitters.html">Become a Sitter</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14px; font-weight: 500; color: #5A4840">
 <span style="display: inline-flex; align-items: center; gap: 8px"><svg class="ic" viewBox="0 0 24 24" style="color: #E5533E"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg>Verified sitters</span>
@@ -477,7 +481,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 </div>
 <div class="svc-split">
 <a href="#waitlist" onClick="{{ setParent }}" data-reveal="1" class="svc-p">
-<img class="svc-home-img" src="./assets/svc-home-3.jpg" alt="A sitter playing with a toddler and his toy truck in the front yard at home" style="object-position: 58% 40%">
+<img class="svc-home-img" src="./assets/Cozy Arts and Crafts Together.png" alt="A sitter and toddler doing arts and crafts together at home" style="object-position: 50% 35%">
 <div class="svc-num" aria-hidden="true">01</div>
 <div class="chip svc-chip"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: #E5533E"><path d="M4 11l8-6.5 8 6.5"></path><path d="M6 9.5V20h12V9.5"></path></svg>At home</div>
 <div class="svc-body">
@@ -487,7 +491,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 </div>
 </a>
 <a href="#waitlist" onClick="{{ setParent }}" data-reveal="1" class="svc-p">
-<img src="./assets/svc-out-2.jpg" alt="A sitter blowing bubbles for a toddler in a garden" style="object-position: 50% 30%">
+<img src="./assets/Joyful Mother-Child Block Building.png" alt="A sitter and toddler building with wooden blocks together at home" style="object-position: 50% 30%">
 <div class="svc-num" aria-hidden="true">02</div>
 <div class="chip svc-chip"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: #E5533E"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2.3"></circle></svg>Mall or café</div>
 <div class="svc-body">
@@ -526,10 +530,6 @@ a{color:#2D221D}a:hover{color:#C8402F}
 </div>
 </sc-if>
 <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-<div style="display: flex; gap: 6px; background: #FFF1E8; border-radius: 999px; padding: 6px; margin-bottom: 24px" role="group" aria-label="I am">
-<button type="button" class="tab" aria-pressed="{{ isParent }}" onClick="{{ setParent }}">I’m a parent</button>
-<button type="button" class="tab" aria-pressed="{{ isSitter }}" onClick="{{ setSitter }}">I want to be a sitter</button>
-</div>
 <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 16px">
 <div class="form-grid" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 <label class="lbl">Your name<input class="in" name="name" type="text" required="required" placeholder="Riya Thomas" autocomplete="name"></label>
@@ -593,6 +593,7 @@ a{color:#2D221D}a:hover{color:#C8402F}
 <a href="#about" style="color: #FFFBF7; text-decoration: none">About</a>
 <a href="#services" style="color: #FFFBF7; text-decoration: none">Services</a>
 <a href="#faq" style="color: #FFFBF7; text-decoration: none">FAQ</a>
+<a href="sitters.html" style="color: #FFFBF7; text-decoration: none">Sitters</a>
 <a href="blog.html" style="color: #FFFBF7; text-decoration: none">Blog</a>
 <a href="#waitlist" style="color: #FFFBF7; text-decoration: none">Join Waitlist</a>
 </div>
@@ -689,31 +690,22 @@ class Component extends DCLogic {
   }
   renderVals() {
     const s = this.state || {};
-    const mode = s.mode || 'parent';
-    const isSitter = mode === 'sitter';
     const sent = !!s.sent;
     const first = s.name ? ', ' + s.name : '';
     return {
       menu: !!s.menu,
       toggleMenu: () => this.setState({ menu: !s.menu }),
       closeMenu: () => this.setState({ menu: false }),
-      setParent: () => this.setState({ mode: 'parent', sent: false }),
-      setSitter: () => this.setState({ mode: 'sitter', sent: false, menu: false }),
-      setParentClose: () => this.setState({ mode: 'parent', sent: false, menu: false }),
-      isParent: !isSitter,
-      isSitter: isSitter,
+      setParent: () => this.setState({ sent: false }),
+      setParentClose: () => this.setState({ sent: false, menu: false }),
       sent: sent,
       notSent: !sent,
       sending: !!s.sending,
       errorMsg: s.error || '',
-      submitLabel: s.sending ? 'Sending…' : (isSitter ? 'Become a Pacify Sitter' : 'Join the Pacify Waitlist'),
-      helper: isSitter
-        ? 'We’ll call you to walk through verification and onboarding.'
-        : 'We’ll call you, understand your family’s needs, and help you find the right sitter.',
-      thanksTitle: isSitter ? 'Welcome aboard' + first + '.' : 'You’re on the list' + first + '.',
-      thanksBody: isSitter
-        ? 'Our team will call you to begin verification. Your free time is about to mean a lot to a family.'
-        : 'We’ll call you, understand your family’s needs, and help you find the right sitter. Your breathing room is on its way.',
+      submitLabel: s.sending ? 'Sending…' : 'Join the Pacify Waitlist',
+      helper: 'We’ll call you, understand your family’s needs, and help you find the right sitter.',
+      thanksTitle: 'You’re on the list' + first + '.',
+      thanksBody: 'We’ll call you, understand your family’s needs, and help you find the right sitter. Your breathing room is on its way.',
       submit: (e) => {
         e.preventDefault();
         const form = e.target;
@@ -724,7 +716,7 @@ class Component extends DCLogic {
           phone = String(data.get('phone') || '').trim();
           city = String(data.get('city') || '').trim();
         } catch (err) {}
-        const role = isSitter ? 'Babysitter' : 'Parent';
+        const role = 'Parent';
         this.setState({ sending: true, error: '' });
         if (typeof emailjs === 'undefined') {
           console.error('[Pacify] EmailJS SDK did not load; email not sent.');

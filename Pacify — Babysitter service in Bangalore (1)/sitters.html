@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Become a Babysitter in Bangalore — Pacify Sitters</title>
+<meta name="description" content="Join Pacify as a verified babysitter in Bangalore. Choose your own hours, get matched with families near you, and meet every family on a video call before you book.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root{--cream:#FFFBF7;--blush:#FFF1E8;--peach:#FDC7AC;--coral:#F5695A;--coral-d:#E5533E;--rust:#C8402F;--ink:#2D221D;--ink-2:#5A4840;--ink-3:#8A7468;--green:#3FA36B}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Poppins',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 40px}
+.script{font-family:'Caveat',cursive;font-weight:600}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--rust)}
+.h2{font-size:clamp(34px,4vw,58px);line-height:1.05;font-weight:700;letter-spacing:-.03em}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--ink-2)}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;white-space:nowrap}
+.btn-co{background:var(--coral);color:var(--ink)}
+.btn-co:hover{transform:translateY(-2px);box-shadow:0 14px 32px -12px rgba(245,105,90,.85)}
+.btn-ln{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ln:hover{background:var(--ink);color:var(--cream)}
+section{padding:110px 0}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.shown{opacity:1;transform:none}
+.fade{animation:fade .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes fade{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* nav */
+.nav{position:sticky;top:14px;z-index:50;padding:0 20px;margin-top:14px}
+.nav-bar{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 10px 10px 24px;border-radius:999px;background:rgba(255,251,247,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 40px -20px rgba(45,34,29,.35)}
+.nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a[aria-current]{color:var(--coral-d)}
+@media (max-width:760px){.nav-links{display:none}}
+
+/* hero */
+.hero{padding:60px 0 80px;position:relative;overflow:clip}
+.hero::before{content:'';position:absolute;right:-12vw;top:-16vw;width:50vw;height:50vw;border-radius:999px;background:var(--blush);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:60px;align-items:center}
+.hero h1{font-size:clamp(40px,5vw,76px);line-height:1.04;font-weight:700;letter-spacing:-.035em;margin:16px 0 20px}
+.hero h1 span{color:var(--coral-d)}
+.hero-img{position:relative;height:min(64vh,600px);border-radius:300px 300px 40px 40px;overflow:hidden;box-shadow:0 50px 90px -50px rgba(45,34,29,.55)}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:40% 30%}
+.note{position:absolute;left:-50px;bottom:22%;background:var(--cream);padding:12px 18px 14px;border-radius:20px;font-size:clamp(24px,2.2vw,32px);line-height:1;transform:rotate(-6deg);box-shadow:0 20px 40px -24px rgba(45,34,29,.45)}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust .ic{color:var(--coral-d)}
+
+/* model */
+.model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:44px}
+.mcard{background:var(--blush);border-radius:30px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.mcard .mi{width:56px;height:56px;border-radius:18px;background:var(--cream);color:var(--rust);display:flex;align-items:center;justify-content:center}
+.mcard h3{font-size:22px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.mcard p{font-size:16px;color:var(--ink-2)}
+
+/* types */
+.types{background:var(--blush)}
+.type-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
+.tcard{border-radius:28px;padding:26px 28px;display:flex;flex-direction:column;gap:10px}
+.tcard .tag{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 14px;border-radius:999px;background:var(--cream);color:var(--ink)}
+.tcard h3{font-size:clamp(24px,2.2vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.tcard p{font-size:16px}
+.tcard .rule{margin-top:6px;display:flex;gap:10px;align-items:flex-start;font-size:15px;font-weight:500;padding:14px 16px;border-radius:18px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:44px;counter-reset:s}
+.step{position:relative;background:var(--cream);border:1.5px solid var(--blush);border-radius:28px;padding:28px 24px;display:flex;flex-direction:column;gap:10px}
+.step .n{font-size:56px;font-weight:800;line-height:.9;letter-spacing:-.05em;color:var(--coral)}
+.step h3{font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.01em}
+.step p{font-size:15px;color:var(--ink-2)}
+.step.hl{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.step.hl p{color:var(--peach)}
+.step.hl .n{color:var(--peach)}
+.callout{margin-top:22px;display:flex;align-items:center;gap:14px;padding:18px 22px;border-radius:22px;background:var(--blush);font-weight:500}
+.callout .ic{color:var(--coral-d);width:24px;height:24px}
+
+/* rules */
+.rules-sec{background:var(--ink);color:var(--cream);border-radius:40px 40px 0 0}
+.rules-sec .eyebrow{color:var(--peach)}
+.rules-sec .lead{color:rgba(255,251,247,.8)}
+.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:40px}
+.rcard{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-radius:24px;background:rgba(255,251,247,.06);border:1px solid rgba(253,199,172,.18)}
+.rcard .ri{width:46px;height:46px;border-radius:14px;background:var(--coral);color:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.rcard h3{font-size:18px;font-weight:700;line-height:1.25}
+.rcard p{font-size:15px;color:rgba(255,251,247,.78);margin-top:4px}
+
+/* verification */
+.ver{background:var(--ink);color:var(--cream);padding-top:20px}
+.ver .lead{color:rgba(255,251,247,.8)}
+.ver .eyebrow{color:var(--peach)}
+.ver-box{margin-top:36px;border-radius:36px;background:rgba(255,251,247,.05);border:1.5px dashed rgba(253,199,172,.3);padding:clamp(24px,3vw,40px)}
+.badges{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.badge{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;font-size:14px;font-weight:500;line-height:1.25}
+.medal{width:72px;height:72px;border-radius:999px;display:flex;align-items:center;justify-content:center;position:relative;background:var(--coral);color:var(--ink);box-shadow:inset 0 -4px 0 rgba(45,34,29,.22),0 0 0 5px rgba(245,105,90,.18)}
+.badge:nth-child(even) .medal{background:var(--peach)}
+.medal .ic{width:30px;height:30px;stroke-width:1.6}
+.tk{position:absolute;right:-3px;bottom:-3px;width:24px;height:24px;border-radius:999px;background:var(--green);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--ink)}
+.ver-foot{margin-top:28px;padding-top:22px;border-top:1px solid rgba(253,199,172,.2);display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px;color:rgba(255,251,247,.85)}
+.ver-foot span{display:inline-flex;align-items:center;gap:8px}
+.ver-foot .ic{color:var(--green)}
+
+/* good to know */
+.gtk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.gtk{background:var(--blush);border-radius:24px;padding:24px;display:flex;gap:14px;align-items:flex-start}
+.gtk .gi{width:42px;height:42px;border-radius:14px;background:var(--cream);color:var(--rust);display:flex;align-items:center;justify-content:center;flex:none}
+.gtk h3{font-size:21px;font-weight:700;line-height:1.25}
+.gtk p{font-size:16px;color:var(--ink-2);margin-top:3px}
+
+/* parents note */
+.pnote{display:grid;grid-template-columns:auto minmax(0,1fr);gap:30px;align-items:center;background:var(--peach);border-radius:36px;padding:clamp(28px,3.6vw,48px)}
+.pnote .pi{width:84px;height:84px;border-radius:26px;background:var(--cream);color:var(--rust);display:flex;align-items:center;justify-content:center}
+.pnote .pi .ic{width:40px;height:40px;stroke-width:1.5}
+.pnote h2{font-size:clamp(24px,2.4vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.pnote p{font-size:16px;color:#3E302A;margin-top:10px;max-width:760px}
+.pnote a{font-weight:600}
+
+/* apply */
+.apply{background:var(--blush)}
+.apply-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center}
+.form-card{background:var(--cream);border-radius:36px;padding:clamp(24px,3vw,38px);box-shadow:0 30px 70px -40px rgba(45,34,29,.35)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.lbl{display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.in{width:100%;height:54px;border-radius:14px;border:1.5px solid #E6D2C5;background:#FFFFFF;padding:0 16px;font:inherit;font-size:16px;color:var(--ink);outline:none;transition:border-color .2s,box-shadow .2s}
+.in:focus{border-color:var(--coral);box-shadow:0 0 0 4px rgba(245,105,90,.18)}
+.check{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-2);margin-top:18px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--coral-d);flex:none}
+.thanks{display:none;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:26px 10px}
+.thanks .ok{width:72px;height:72px;border-radius:999px;background:var(--coral);display:flex;align-items:center;justify-content:center}
+.thanks h3{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.thanks p{color:var(--ink-2)}
+
+/* footer */
+footer{background:var(--ink);color:var(--cream);padding:56px 0 36px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px;font-weight:500}
+.foot-links a{text-decoration:none}
+.foot-contact{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:var(--coral);color:var(--ink);font-weight:600;font-size:15px;text-decoration:none}
+.pill + .pill{background:var(--cream)}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid rgba(253,199,172,.2);font-size:13px;color:rgba(255,251,247,.65)}
+
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.fade{animation:none}*{transition:none !important}}
+@media (max-width:1000px){
+.badges{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 12px}
+.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gtk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+.wrap{padding:0 20px}
+section{padding:80px 0}
+.hero{padding-top:36px}
+.hero-grid,.type-grid,.apply-grid,.model-grid,.rule-grid{grid-template-columns:1fr;gap:28px}
+.hero-img{height:420px;border-radius:200px 200px 28px 28px}
+.note{left:12px;bottom:16px}
+.gtk-grid{grid-template-columns:1fr}
+.pnote{grid-template-columns:1fr;gap:18px}
+.rules-sec{border-radius:28px 28px 0 0}
+}
+@media (max-width:520px){
+.steps{grid-template-columns:1fr}
+.fgrid{grid-template-columns:1fr}
+.badges{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+.hero-h{font-size:clamp(40px,5vw,76px) !important;line-height:1.04 !important;font-weight:700 !important;letter-spacing:-.035em !important}
+.vlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:40px}
+.vitem{display:flex;gap:20px;align-items:flex-start;padding:24px;border-radius:26px;background:rgba(255,251,247,.05);border:1.5px dashed rgba(253,199,172,.28)}
+.vitem:last-child{grid-column:1 / -1}
+.vitem .medal{width:62px;height:62px;flex:none}
+.vitem .medal .ic{width:26px;height:26px}
+.vitem:nth-child(even) .medal{background:var(--peach)}
+.vn{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--peach)}
+.vitem h3{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
+.vitem p{font-size:15.5px;color:rgba(255,251,247,.8);margin-top:4px}
+.gtk-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.contact{background:var(--blush);border-radius:36px;padding:clamp(28px,3.6vw,46px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.contact p{color:var(--ink-2);font-size:17px}
+.contact-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:10px}
+.pill-ln{background:var(--cream) !important;box-shadow:inset 0 0 0 1.5px var(--ink)}
+@media (max-width:860px){.vlist,.gtk-grid{grid-template-columns:1fr !important}.vitem:last-child{grid-column:auto}}
+
+/* quest path */
+.quest{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:48px;opacity:1 !important;transform:none !important}
+.q-track{position:absolute;left:12%;right:12%;top:38px;height:4px;border-radius:4px;background:repeating-linear-gradient(90deg,rgba(45,34,29,.18) 0 10px,transparent 10px 18px);z-index:0}
+.q-track i{position:absolute;inset:0;border-radius:4px;background:linear-gradient(90deg,var(--coral),var(--peach));transform:scaleX(0);transform-origin:left;transition:transform 2.2s cubic-bezier(.4,0,.2,1) .3s}
+.quest.shown .q-track i{transform:scaleX(1)}
+.q-step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:0 6px}
+.q-node{width:78px;height:78px;border-radius:999px;background:var(--cream);color:var(--rust);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 0 3px var(--blush),inset 0 -5px 0 rgba(45,34,29,.06);margin-bottom:10px;transform:scale(.6);opacity:.35;transition:transform .6s cubic-bezier(.3,1.6,.5,1),opacity .4s,background .4s,color .4s}
+.q-node .ic{width:30px;height:30px;stroke-width:1.6}
+.q-tk{position:absolute;right:-2px;bottom:-2px;width:26px;height:26px;border-radius:999px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--cream);transform:scale(0);transition:transform .45s cubic-bezier(.3,1.8,.5,1)}
+.q-tk svg{width:13px;height:13px}
+.quest.shown .q-node{transform:none;opacity:1;background:var(--coral);color:var(--ink)}
+.quest.shown .q-tk{transform:scale(1)}
+.q-key .q-node{width:92px;height:92px;margin-top:-7px}
+.quest.shown .q-key .q-node{background:var(--ink);color:var(--peach);box-shadow:0 0 0 6px rgba(245,105,90,.25)}
+.quest.shown .q-goal .q-node{background:var(--green);color:#fff}
+.q-goal .q-tk{background:var(--coral)}
+.q-lv{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);background:var(--blush);padding:4px 10px;border-radius:999px}
+.q-key .q-lv{background:var(--ink);color:var(--peach)}
+.q-goal .q-lv{background:#E3F3EA;color:#2E7D52}
+.q-step h3{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin-top:4px}
+.q-step p{font-size:15px;color:var(--ink-2);max-width:250px}
+.q-yes{display:flex;gap:6px;margin-top:4px}
+.q-yes span{font-size:12.5px;font-weight:600;padding:5px 10px;border-radius:999px;background:#E3F3EA;color:#2E7D52}
+.quest.shown .q-step:nth-of-type(2) .q-node{transition-delay:0.20s}.quest.shown .q-step:nth-of-type(2) .q-tk{transition-delay:0.55s}
+.quest.shown .q-step:nth-of-type(3) .q-node{transition-delay:0.75s}.quest.shown .q-step:nth-of-type(3) .q-tk{transition-delay:1.10s}
+.quest.shown .q-step:nth-of-type(4) .q-node{transition-delay:1.30s}.quest.shown .q-step:nth-of-type(4) .q-tk{transition-delay:1.65s}
+.quest.shown .q-step:nth-of-type(5) .q-node{transition-delay:1.85s}.quest.shown .q-step:nth-of-type(5) .q-tk{transition-delay:2.20s}
+
+/* pass card */
+.pass{margin-top:56px;display:flex;align-items:center;gap:30px;padding:28px 34px;border-radius:32px;background:var(--peach);position:relative;overflow:hidden}
+.pass::after{content:'';position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:999px;border:24px solid rgba(255,251,247,.35)}
+.pass-card{flex:none;width:112px;height:150px;border-radius:16px;background:var(--cream);border:2px solid var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative;transform:rotate(-8deg);box-shadow:6px 8px 0 var(--ink);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pass:hover .pass-card{transform:rotate(4deg) translateY(-4px)}
+.pass-card .ic{width:38px;height:38px;color:var(--coral-d);stroke-width:1.7}
+.pass-card b{font-size:20px;font-weight:800;letter-spacing:.14em}
+.pass-corner{position:absolute;top:6px;left:9px;font-size:16px;font-weight:700;color:var(--coral-d)}
+.pass-b{top:auto;left:auto;bottom:6px;right:9px;transform:rotate(180deg)}
+.pass-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:var(--peach);padding:5px 12px;border-radius:999px}
+.pass h3{font-size:clamp(24px,2.4vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin-top:12px}
+.pass p{font-size:17px;color:#3E302A;margin-top:6px}
+
+/* house rules bento */
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+.bx{border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:8px;background:rgba(255,251,247,.06);border:1px solid rgba(253,199,172,.16);color:var(--cream);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.bx:hover{transform:translateY(-3px)}
+.bx-ic{width:50px;height:50px;border-radius:16px;background:var(--coral);color:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.bx-n{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--peach)}
+.bx h3{font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.bx p{font-size:15px;color:rgba(255,251,247,.75)}
+.bx-feat{grid-row:span 3;background:var(--cream);color:var(--ink);justify-content:flex-end;padding:32px;border:0}
+.bx-feat .bx-ic{width:64px;height:64px;border-radius:20px;margin-bottom:auto}
+.bx-feat .bx-ic .ic{width:30px;height:30px}
+.bx-feat .bx-n{color:var(--rust)}
+.bx-feat h3{font-size:clamp(26px,2.4vw,34px);line-height:1.08;letter-spacing:-.02em}
+.bx-feat p{color:var(--ink-2);font-size:16.5px}
+.bx-coral{background:var(--coral);color:var(--ink);border:0}
+.bx-coral .bx-ic{background:var(--ink);color:var(--coral)}
+.bx-coral .bx-n{color:var(--ink)}
+.bx-coral p{color:rgba(45,34,29,.8)}
+.bx-peach{background:var(--peach);color:var(--ink);border:0}
+.bx-peach .bx-ic{background:var(--cream);color:var(--rust)}
+.bx-peach .bx-n{color:var(--rust)}
+.bx-peach p{color:#3E302A}
+.bx-wide{grid-column:span 2;flex-direction:row;align-items:center;gap:18px}
+.bx-wide .bx-ic{margin-bottom:0;flex:none}
+.bx-wide > .bx-n{display:none}
+@media (max-width:1000px){
+.quest{grid-template-columns:1fr 1fr;row-gap:36px}
+.q-track{display:none}
+.bento{grid-template-columns:1fr 1fr}
+.bx-feat{grid-row:auto;grid-column:span 2;min-height:240px}
+}
+@media (max-width:620px){
+.quest{grid-template-columns:1fr}
+.pass{flex-direction:row;align-items:center;gap:16px;padding:18px 18px;margin-top:36px;border-radius:24px}.pass::after{display:none}.pass-card{width:58px;height:78px;border-radius:10px;box-shadow:3px 4px 0 var(--ink);gap:2px}.pass-card .ic{width:22px;height:22px}.pass-card b{font-size:11px;letter-spacing:.08em}.pass-corner{font-size:10px;top:3px;left:5px}.pass-b{bottom:3px;right:5px;top:auto;left:auto}.pass-tag{font-size:9.5px;padding:3px 8px;letter-spacing:.1em}.pass h3{font-size:19px;margin-top:7px}.pass p{font-size:14px;margin-top:3px}
+.bento{grid-template-columns:1fr}
+.bx-feat,.bx-wide{grid-column:auto}
+.bx-wide{flex-direction:column;align-items:flex-start}
+}
+
+.rulebook{list-style:none;margin:36px 0 0;padding:10px 34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;border-radius:32px;background:rgba(255,251,247,.05);border:1px solid rgba(253,199,172,.16)}
+.rb-row{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(253,199,172,.14)}
+.rb-row:nth-last-child(1){border-bottom:0}
+.rb-row:nth-child(7){grid-column:1 / -1}
+.rb-ic{width:46px;height:46px;border-radius:14px;background:var(--coral);color:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.rb-row:nth-child(even) .rb-ic{background:var(--peach)}
+.rb-row h3{font-size:18px;font-weight:700;line-height:1.3;display:flex;align-items:baseline;gap:10px}
+.rb-n{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--peach);flex:none}
+.rb-row p{font-size:15px;color:rgba(255,251,247,.75);margin-top:4px}
+@media (max-width:860px){.rulebook{grid-template-columns:1fr;padding:6px 22px}.rb-row:nth-child(7){grid-column:auto}}
+
+/* verification: light, horizontal checklist (distinct from dark rulebook) */
+.ver{background:var(--blush) !important;color:var(--ink) !important;padding-top:90px !important;border-radius:40px 40px 0 0;margin-top:-40px;position:relative}
+.rules-sec{padding-bottom:140px}
+.ver .eyebrow{color:var(--rust) !important}
+.ver .lead{color:var(--ink-2) !important}
+.vlist{grid-template-columns:repeat(5,minmax(0,1fr)) !important;gap:14px !important;position:relative;margin-top:44px !important}
+.vlist::before{content:'';position:absolute;left:8%;right:8%;top:58px;border-top:2.5px dashed rgba(200,64,47,.35);z-index:0}
+.vitem{flex-direction:column !important;align-items:center !important;text-align:center;gap:12px !important;background:var(--cream) !important;border:0 !important;border-radius:26px !important;padding:24px 18px 26px !important;box-shadow:0 24px 50px -34px rgba(45,34,29,.35);position:relative;z-index:1;margin-top:28px}
+.vitem:last-child{grid-column:auto !important}
+.vitem .medal{margin-top:-58px;width:68px !important;height:68px !important;box-shadow:0 0 0 6px var(--blush),inset 0 -4px 0 rgba(45,34,29,.18) !important}
+.vitem .tk{box-shadow:0 0 0 3px var(--cream) !important}
+.vn{color:var(--rust) !important}
+.vitem h3{color:var(--ink);font-size:18px !important}
+.vitem p{color:var(--ink-2) !important;font-size:14.5px !important}
+@media (max-width:1000px){.vlist{grid-template-columns:repeat(2,minmax(0,1fr)) !important;row-gap:44px !important}.vlist::before{display:none}}
+@media (max-width:620px){.vlist{grid-template-columns:1fr !important}.ver{border-radius:28px 28px 0 0}}
+
+/* page-flip stacking (matches main site) */
+.anchor{position:relative;height:0}
+.pg{position:sticky;top:0;border-radius:40px 40px 0 0;box-shadow:0 -30px 60px -34px rgba(45,34,29,.32);transform:scale(calc(1 - var(--cv,0) * .06));transform-origin:50% 50%;will-change:transform}
+.pg::after{content:'';position:absolute;inset:0;border-radius:inherit;background:#2D221D;opacity:calc(var(--cv,0) * .5);pointer-events:none;z-index:20}
+.hero.pg{border-radius:0;box-shadow:none}
+.pg-end{position:relative !important;transform:none !important}
+.pg-end::after{display:none}
+.pg-foot{border-radius:0 !important;box-shadow:none !important}
+.pg-foot{position:relative;border-radius:40px 40px 0 0;box-shadow:0 -30px 60px -34px rgba(45,34,29,.4)}
+.ver{margin-top:0 !important;padding-top:100px !important}
+.rules-sec{padding-bottom:100px !important}
+.nav{z-index:60}
+@media (max-width:860px){.pg,.pg-foot{border-radius:28px 28px 0 0}}
+@media (prefers-reduced-motion:reduce){.pg{transform:none}.pg::after{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+<div class="nav-bar">
+<a href="index.html#top" aria-label="Pacify home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
+<div class="nav-links">
+<a href="index.html#services">Services</a>
+<a href="index.html#faq">FAQ</a>
+<a href="sitters.html" aria-current="page">Sitters</a>
+<a href="blog.html">Blog</a>
+</div>
+<a class="btn btn-co" href="#apply" style="min-height: 44px; padding: 0 20px; font-size: 14px">Apply now <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</nav>
+
+<!-- 1. BANNER -->
+<header class="hero pg" style="background: var(--cream)">
+<div class="wrap hero-grid fade">
+<div>
+<div class="eyebrow">You are a Pacify sitter</div>
+<h1 class="hero-h">If you love spending time with toddlers in your free time, <span>we’d love to talk to you.</span></h1>
+<p class="lead" style="max-width: 560px">We are a platform that connects young adults who love to babysit with parents looking for a warm and friendly buddy for their little ones.</p>
+<p class="lead" style="max-width: 560px; margin-top: 14px; color: var(--ink); font-weight: 500">Please be assured that this platform is built around your safety as much as theirs.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px">
+<a class="btn btn-co" href="#apply">Apply to be a sitter <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</div>
+<div style="position: relative">
+<div class="hero-img"><img src="assets/svc-out-2.jpg" alt="A Pacify sitter blowing bubbles with a toddler in a garden"></div>
+</div>
+</div>
+</header>
+
+<!-- 2. SERVICES -->
+<section class="types pg" style="padding: 64px 0">
+<div class="wrap">
+<div class="reveal">
+<div class="eyebrow">You can pick the service you enjoy</div>
+<h2 class="h2" style="margin-top: 14px">Two ways to help.</h2>
+</div>
+<div class="type-grid">
+<div class="tcard reveal" style="background: var(--cream)">
+<span class="tag"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: var(--coral-d)"><path d="M4 11l8-6.5 8 6.5"/><path d="M6 9.5V20h12V9.5"/></svg>At home</span>
+<h3>Babysitting at home</h3>
+<p style="color: var(--ink-2)">Spend a few hours with a little one at their home while the parent works, rests or steps out.</p>
+</div>
+<div class="tcard reveal" style="background: var(--ink); color: var(--cream)">
+<span class="tag"><svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px; color: var(--coral-d)"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Out &amp; about</span>
+<h3>Out-and-about babysitting</h3>
+<p style="color: rgba(255,251,247,.82)">Join a family at a mall, café or other public place and keep their little one busy while they shop, work or catch up.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3. PACIFY WORKS ON YOUR TERMS -->
+<div id="how" class="anchor"></div>
+<section class="pg" style="background: var(--cream)">
+<div class="wrap">
+<div class="reveal">
+<h2 class="h2">Pacify works on your terms.</h2>
+</div>
+<div class="quest reveal" id="quest">
+<div class="q-track" aria-hidden="true"><i></i></div>
+<div class="q-step">
+<div class="q-node"><svg class="ic" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h3"/></svg><span class="q-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+<span class="q-lv">Level 1</span>
+<h3>Share your slots</h3>
+<p>Tell us the days and times you’re free. Update them whenever your plans change.</p>
+</div>
+<div class="q-step">
+<div class="q-node"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span class="q-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+<span class="q-lv">Level 2</span>
+<h3>We find a family nearby</h3>
+<p>Every family speaks to our team first. We then match you with one close to you, within your slots.</p>
+</div>
+<div class="q-step q-key">
+<div class="q-node"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10.5l5-3v9l-5-3"/></svg><span class="q-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+<span class="q-lv">Level 3 · Checkpoint</span>
+<h3>Meet on a video call</h3>
+<p>You meet the parent and the little one first. Both sides confirm before anything is booked.</p>
+<div class="q-yes"><span>You ✓</span><span>Parent ✓</span></div>
+</div>
+<div class="q-step q-goal">
+<div class="q-node"><svg class="ic" viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg><span class="q-tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div>
+<span class="q-lv">Unlocked</span>
+<h3>Booking confirmed</h3>
+<p>Once you’re both happy, we confirm the booking and share the details.</p>
+</div>
+</div>
+
+<div class="pass reveal">
+<div class="pass-card" aria-hidden="true">
+<span class="pass-corner">∞</span>
+<svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+<b>PASS</b>
+<span class="pass-corner pass-b">∞</span>
+</div>
+<div>
+<div class="pass-tag">Your free pass · unlimited uses</div>
+<h3>You can say no to any match.</h3>
+<p>Before or after the video call. No questions asked.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4. HOUSE RULES -->
+<section class="rules-sec pg">
+<div class="wrap">
+<div class="reveal">
+<div class="eyebrow">Your safety comes first</div>
+<h2 class="h2" style="margin-top: 14px">Pacify house rules.</h2>
+</div>
+<ol class="rulebook">
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M4 11l8-6.5 8 6.5"/><path d="M6 9.5V20h12V9.5"/><circle cx="12" cy="13.5" r="1.8"/></svg></span><div><h3><span class="rb-n">01</span>A woman of the house is present</h3><p>For at-home sessions, an adult woman of the household stays home throughout.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10.5l5-3v9l-5-3"/></svg></span><div><h3><span class="rb-n">02</span>Video call before every first booking</h3><p>You always see who you’re meeting before you go.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-5h6v5"/></svg></span><div><h3><span class="rb-n">03</span>Public places for outings</h3><p>Malls, cafés and other public spaces, only where you feel comfortable.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.6"/><path d="M8 21v-5l-2-3.5L9 10h6l3 2.5-2 3.5v5"/></svg></span><div><h3><span class="rb-n">04</span>Children aged 2 and up</h3><p>You care only for the number of children agreed in the booking.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><div><h3><span class="rb-n">05</span>We’re a call away</h3><p>If anything feels off, you can end the session and call us. We’ll take it from there.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><div><h3><span class="rb-n">06</span>Your details stay private</h3><p>Your number and address are shared only after a booking is confirmed.</p></div></li>
+<li class="rb-row reveal"><span class="rb-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg></span><div><h3><span class="rb-n">07</span>You’re there to play and care</h3><p>No housework, cooking, driving or giving medicine. Just the little ones.</p></div></li>
+</ol>
+</div>
+</section>
+
+<!-- 5. SITTER VERIFICATION -->
+<section class="ver pg">
+<div class="wrap">
+<div class="reveal" style="max-width: 760px">
+<div class="eyebrow">Sitter verification</div>
+<h2 class="h2" style="margin-top: 14px">Five simple checks.</h2>
+<p class="lead" style="margin-top: 16px">Parents trust Pacify because every sitter goes through the same checks. We guide you through each step.</p>
+</div>
+<div class="vlist">
+<div class="vitem reveal"><div class="medal"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14.5 10h4M14.5 13.5h3"/></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div><div><span class="vn">01</span><h3>Identity &amp; address</h3><p>Your Aadhaar card. That’s it.</p></div></div>
+<div class="vitem reveal"><div class="medal"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div><div><span class="vn">02</span><h3>Police verification</h3><p>A Police Clearance Certificate (PCC). Never got one before? We’ll walk you through it.</p></div></div>
+<div class="vitem reveal"><div class="medal"><svg class="ic" viewBox="0 0 24 24"><path d="M2.5 9.5L12 5l9.5 4.5L12 14 2.5 9.5z"/><path d="M6.5 11.5V16c1.5 1.6 3.4 2.4 5.5 2.4s4-.8 5.5-2.4v-4.5"/></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div><div><span class="vn">03</span><h3>Qualification check</h3><p>Your college or university ID, or your latest degree certificate.</p></div></div>
+<div class="vitem reveal"><div class="medal"><svg class="ic" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4A8 8 0 1 1 20 12z"/><path d="M12 15.5s-3.2-1.9-3.2-4.1a1.8 1.8 0 0 1 3.2-1.1 1.8 1.8 0 0 1 3.2 1.1c0 2.2-3.2 4.1-3.2 4.1z"/></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div><div><span class="vn">04</span><h3>Psychologist screening</h3><p>A short, friendly chat with our verified psychologist to understand how you connect with children. No right or wrong answers.</p></div></div>
+<div class="vitem reveal"><div class="medal"><svg class="ic" viewBox="0 0 24 24"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M10 12v2a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="11" r="2"/></svg><span class="tk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" style="width: 12px; height: 12px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></div><div><span class="vn">05</span><h3>Health declaration</h3><p>A simple self-declaration that you don’t have any contagious illness that could affect children.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- 6. GOOD TO KNOW -->
+<section class="pg" style="background: var(--cream)">
+<div class="wrap">
+<div class="reveal">
+<div class="eyebrow">Before you apply</div>
+<h2 class="h2" style="margin-top: 14px">Good to know.</h2>
+</div>
+<div class="gtk-grid">
+<div class="gtk reveal"><div class="gi"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6"/></svg></div><div><h3>18 and above</h3><p>Students, young professionals and anyone who loves little ones.</p></div></div>
+<div class="gtk reveal"><div class="gi"><svg class="ic" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></div><div><h3>Bangalore only, for now</h3><p>We’re starting in Bangalore and growing area by area.</p></div></div>
+<div class="gtk reveal"><div class="gi"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 14.5h2"/></svg></div><div><h3>Paid per hour, per child</h3><p>Your pay will be ₹150 per hour per child, paid directly to you.</p></div></div>
+<div class="gtk reveal"><div class="gi"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div><div><h3>Cancellations</h3><p>If you need to cancel, you must inform the family at least 8 hours ahead.</p></div></div>
+</div>
+</div>
+</section>
+
+<!-- 7. CONTACT -->
+<section class="pg" style="background: var(--cream); padding: 70px 0">
+<div class="wrap">
+<div class="contact reveal">
+<div class="script" style="font-size: clamp(30px, 3vw, 42px); line-height: 1.1; color: var(--rust)">Have a question?</div>
+<p>Call us or write to us. We’re happy to talk.</p>
+<div class="contact-pills">
+<a class="pill" href="tel:+918848873841"><svg class="ic" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+91 88488 73841</a>
+<a class="pill pill-ln" href="mailto:query.pacifyco@gmail.com"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg>query.pacifyco@gmail.com</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- APPLY -->
+<div id="apply" class="anchor"></div>
+<section class="apply pg pg-end">
+<div class="wrap apply-grid">
+<div class="reveal">
+<div class="eyebrow">Apply</div>
+<h2 class="h2" style="margin-top: 14px">Ready to join Pacify?</h2>
+<p class="lead" style="margin-top: 16px">Leave your details and we’ll call you to talk through verification and next steps.</p>
+<div class="script" style="font-size: clamp(30px, 3vw, 42px); color: var(--rust); margin-top: 20px; transform: rotate(-2deg); display: inline-block">Your time matters too.</div>
+</div>
+<div class="form-card reveal">
+<form id="sitterForm">
+<div class="fgrid">
+<label class="lbl">Your name<input class="in" name="name" type="text" required placeholder="Riya Thomas" autocomplete="name"></label>
+<label class="lbl">Phone<input class="in" name="phone" type="tel" required placeholder="+91 98xxx xxxxx" autocomplete="tel"></label>
+<label class="lbl" style="grid-column: 1 / -1">Area &amp; city<input class="in" name="city" type="text" required placeholder="Koramangala, Bengaluru"></label>
+</div>
+<label class="check"><input type="checkbox" required>I confirm I am 18 years or older.</label>
+<button type="submit" class="btn btn-co" id="sitterSubmit" style="width: 100%; margin-top: 20px"><span id="sitterSubmitLabel">Apply to be a sitter</span> <svg class="ic" viewBox="0 0 24 24" style="width: 18px; height: 18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+<p id="sitterError" style="font-size: 14px; color: var(--coral-d); text-align: center; margin-top: 12px; display: none"></p>
+<p style="font-size: 14px; color: var(--ink-3); text-align: center; margin-top: 12px">We’ll call you to walk through verification and onboarding.</p>
+</form>
+<div class="thanks" id="thanks">
+<div class="ok"><svg class="ic" viewBox="0 0 24 24" style="width: 34px; height: 34px; stroke-width: 2.2"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+<h3 id="thanksTitle">Welcome aboard.</h3>
+<p>Our team will call you to begin verification. Your free time is about to mean a lot to a family.</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="pg-foot">
+<div class="wrap">
+<div class="foot">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<img src="assets/15d064d77b947b9ba752a0df711f2007.png" alt="Pacifyco" style="width: 150px; height: auto">
+<div class="foot-links">
+<a href="index.html#about">About</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#faq">FAQ</a>
+<a href="sitters.html">Sitters</a>
+<a href="blog.html">Blog</a>
+<a href="index.html#waitlist">Join Waitlist</a>
+</div>
+</div>
+</div>
+<div class="copy">© 2026 Pacifyco · Bengaluru</div>
+</div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  function check(){
+    var vh = window.innerHeight;
+    for (var i = 0; i < els.length; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.top < vh * 0.92 && r.bottom > -40) els[i].classList.add('shown');
+    }
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('shown'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('shown'); }); }
+  check();
+
+  // --- EmailJS config -----------------------------------------------------
+  // Same EmailJS account/template as index.html's waitlist form.
+  var EMAILJS_PUBLIC_KEY = 'O2FnVAv0TNG_zCX-s';
+  var EMAILJS_SERVICE_ID = 'service_4ghi7v6';
+  var EMAILJS_TEMPLATE_ID = 'template_hx12jan';
+  var WAITLIST_NOTIFY_EMAIL = 'query.pacifyco@gmail.com';
+  if (typeof emailjs !== 'undefined') {
+    try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (err) { console.error('[Pacify] EmailJS init failed:', err); }
+  }
+
+  var form = document.getElementById('sitterForm');
+  var submitBtn = document.getElementById('sitterSubmit');
+  var submitLabel = document.getElementById('sitterSubmitLabel');
+  var errorEl = document.getElementById('sitterError');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = new FormData(form);
+    var name = String(data.get('name') || '').trim();
+    var phone = String(data.get('phone') || '').trim();
+    var city = String(data.get('city') || '').trim();
+    var first = name.split(' ')[0];
+
+    errorEl.style.display = 'none';
+    if (typeof emailjs === 'undefined') {
+      console.error('[Pacify] EmailJS SDK did not load; email not sent.');
+      errorEl.textContent = 'Something went wrong — please call or WhatsApp us directly.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending…';
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      role: 'Babysitter',
+      name: name,
+      phone: phone,
+      city: city,
+      to_email: WAITLIST_NOTIFY_EMAIL
+    }).then(function(){
+      document.getElementById('thanksTitle').textContent = 'Welcome aboard' + (first ? ', ' + first : '') + '.';
+      form.style.display = 'none';
+      document.getElementById('thanks').style.display = 'flex';
+    }).catch(function(err){
+      console.error('[Pacify] EmailJS send failed:', err);
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Apply to be a sitter';
+      errorEl.textContent = 'Something went wrong — please try again or call us directly.';
+      errorEl.style.display = 'block';
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var pages=[].slice.call(document.querySelectorAll('.pg')), foot=document.querySelector('.pg-foot'), raf=0;
+  function upd(){
+    raf=0; var vh=window.innerHeight;
+    for(var i=0;i<pages.length;i++){
+      var el=pages[i]; if(el.classList.contains('pg-end')) continue; var t=Math.min(0, vh-el.offsetHeight);
+      if(el.__t!==t){el.__t=t; el.style.top=t+'px';}
+      var next=pages[i+1]||foot, cv=0;
+      if(next){var nt=next.getBoundingClientRect().top, d=Math.max(1,Math.min(vh, el.offsetHeight+t)); cv=Math.min(1,Math.max(0,1-nt/d));}
+      el.style.setProperty('--cv', cv.toFixed(3));
+    }
+  }
+  function tick(){ if(!raf) raf=requestAnimationFrame(upd); }
+  window.addEventListener('scroll',tick,{passive:true}); window.addEventListener('resize',tick); upd(); setTimeout(upd,400);
+})();
+</script>
+</body>
+</html>
