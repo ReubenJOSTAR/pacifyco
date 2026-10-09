@@ -34,7 +34,7 @@ LICENSE          — MIT, copyright ReubenJOSTAR
 
 ## Business facts (for copy/content changes)
 
-- Pricing: from ₹225/hour/child + a platform fee.
+- Pricing: from ₹199/hour/child + a platform fee.
 - Contact: phone `+91 88488 73841`, email `query.pacifyco@gmail.com`.
 - Waitlist form submits via **EmailJS** (service `service_4ghi7v6`, template `template_hx12jan`, notify email `query.pacifyco@gmail.com`), configured inline in `index.html`'s script block. The EmailJS public key is embedded in the page — this is normal for EmailJS's client-side SDK (it's designed to be public), not a leaked secret.
 
