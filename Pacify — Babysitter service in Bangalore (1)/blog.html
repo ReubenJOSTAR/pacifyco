@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pacify Blog — Notes for parents who need a breather</title>
 <meta name="description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
-<link rel="canonical" href="https://www.pacifyco.in/blog.html">
+<link rel="canonical" href="https://www.pacifyco.in/blog">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.pacifyco.in/blog.html">
+<meta property="og:url" content="https://www.pacifyco.in/blog">
 <meta property="og:title" content="Pacify Blog — Notes for parents who need a breather">
 <meta property="og:description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
 <meta property="og:image" content="https://www.pacifyco.in/assets/hero-2.jpg">
@@ -139,14 +139,14 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding:56px 0 3
 
 <nav class="nav" aria-label="Main">
 <div class="nav-bar">
-<a href="index.html#top" aria-label="Pacify home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
+<a href="/#top" aria-label="Pacify home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
 <div class="nav-links">
-<a href="index.html#services">Services</a>
-<a href="index.html#faq">FAQ</a>
-<a href="sitters.html">Sitters</a>
-<a href="blog.html" aria-current="page">Blog</a>
+<a href="/#services">Services</a>
+<a href="/#faq">FAQ</a>
+<a href="/sitters">Sitters</a>
+<a href="/blog" aria-current="page">Blog</a>
 </div>
-<a class="btn btn-co" href="index.html#waitlist" style="min-height: 44px; padding: 0 20px; font-size: 14px">Join Waitlist <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-co" href="/#waitlist" style="min-height: 44px; padding: 0 20px; font-size: 14px">Join Waitlist <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 </nav>
 
@@ -158,12 +158,12 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding:56px 0 3
 <div style="display: flex; flex-direction: column; gap: 12px">
 <img src="assets/15d064d77b947b9ba752a0df711f2007.png" alt="Pacifyco" style="width: 150px; height: auto">
 <div class="foot-links">
-<a href="index.html#about">About</a>
-<a href="index.html#services">Services</a>
-<a href="index.html#faq">FAQ</a>
-<a href="sitters.html">Sitters</a>
-<a href="blog.html">Blog</a>
-<a href="index.html#waitlist">Join Waitlist</a>
+<a href="/#about">About</a>
+<a href="/#services">Services</a>
+<a href="/#faq">FAQ</a>
+<a href="/sitters">Sitters</a>
+<a href="/blog">Blog</a>
+<a href="/#waitlist">Join Waitlist</a>
 </div>
 </div>
 <div class="foot-contact">
@@ -226,7 +226,7 @@ function renderList(){
       <div class="cover"><img src="${first.cover}" alt=""></div>
       <div class="body"><span class="tag">${esc(first.category)}</span><h2>${esc(first.title)}</h2><p>${esc(first.excerpt)}</p>
       <div class="meta">${esc(first.date)} · ${esc(first.read)}</div><span class="read">Read the post ${arrow}</span></div>
-    </a>` : `<div class="empty fade"><div class="script" style="font-size: 40px; color: var(--rust); line-height: 1.1">Our first stories are brewing.</div><p style="margin-top: 10px">We’re putting the kettle on and writing up our first posts for parents. Check back soon!</p><a class="btn btn-co" href="index.html#waitlist" style="margin-top: 22px">Join the Waitlist ${arrow}</a></div>`}
+    </a>` : `<div class="empty fade"><div class="script" style="font-size: 40px; color: var(--rust); line-height: 1.1">Our first stories are brewing.</div><p style="margin-top: 10px">We’re putting the kettle on and writing up our first posts for parents. Check back soon!</p><a class="btn btn-co" href="/#waitlist" style="margin-top: 22px">Join the Waitlist ${arrow}</a></div>`}
   ${rest.length ? `<div class="grid">${rest.map(card).join('')}</div>` : ''}`;
   app.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { activeCat = b.dataset.cat; renderList(); }));
 }
@@ -244,7 +244,7 @@ function renderPost(p){
     <div class="prose">${p.body}</div>
     <div class="cta">
       <div><h3>Ready for a little breathing room?</h3><p>Join the waitlist and we’ll call you to find the right sitter.</p></div>
-      <a class="btn btn-co" href="index.html#waitlist">Join the Waitlist ${arrow}</a>
+      <a class="btn btn-co" href="/#waitlist">Join the Waitlist ${arrow}</a>
     </div>
   </article>
   ${others.length ? `<section class="more"><h2>Keep reading</h2><div class="grid">${others.map(card).join('')}</div></section>` : ''}`;
