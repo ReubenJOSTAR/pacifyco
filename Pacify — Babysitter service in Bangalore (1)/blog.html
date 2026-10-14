@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pacify Blog — Notes for parents who need a breather</title>
-<meta name="description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
+<title>Pacifyco Blog — Notes for parents who need a breather</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="description" content="Tips, stories and ideas from Pacifyco for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
 <link rel="canonical" href="https://www.pacifyco.in/blog">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.pacifyco.in/blog">
-<meta property="og:title" content="Pacify Blog — Notes for parents who need a breather">
-<meta property="og:description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
+<meta property="og:title" content="Pacifyco Blog — Notes for parents who need a breather">
+<meta property="og:description" content="Tips, stories and ideas from Pacifyco for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
 <meta property="og:image" content="https://www.pacifyco.in/assets/hero-2.jpg">
 <meta property="og:image:alt" content="A smiling sitter helping a toddler down a slide at an indoor play area">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pacify Blog — Notes for parents who need a breather">
-<meta name="twitter:description" content="Tips, stories and ideas from Pacify for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
+<meta name="twitter:title" content="Pacifyco Blog — Notes for parents who need a breather">
+<meta name="twitter:description" content="Tips, stories and ideas from Pacifyco for Bangalore parents: finding a babysitter, making time for yourself, and getting a little breathing room.">
 <meta name="twitter:image" content="https://www.pacifyco.in/assets/hero-2.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,14 +140,14 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding:56px 0 3
 
 <nav class="nav" aria-label="Main">
 <div class="nav-bar">
-<a href="/#top" aria-label="Pacify home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
+<a href="/#top" aria-label="Pacifyco home"><img src="assets/ebe27d43d53f62f5f4653314c0182190.png" alt="Pacifyco" style="height: 30px; width: auto"></a>
 <div class="nav-links">
 <a href="/#services">Services</a>
 <a href="/#faq">FAQ</a>
 <a href="/sitters">Sitters</a>
 <a href="/blog" aria-current="page">Blog</a>
 </div>
-<a class="btn btn-co" href="/#waitlist" style="min-height: 44px; padding: 0 20px; font-size: 14px">Join Waitlist <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-co" href="/#waitlist" style="min-height: 44px; padding: 0 20px; font-size: 14px">Register as a Parent <svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 </nav>
 
@@ -163,7 +164,7 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding:56px 0 3
 <a href="/#faq">FAQ</a>
 <a href="/sitters">Sitters</a>
 <a href="/blog">Blog</a>
-<a href="/#waitlist">Join Waitlist</a>
+<a href="/#waitlist">Register as a Parent</a>
 </div>
 </div>
 <div class="foot-contact">
@@ -210,12 +211,12 @@ function card(p){
 }
 
 function renderList(){
-  document.title = 'Pacify Blog — Notes for parents who need a breather';
+  document.title = 'Pacifyco Blog — Notes for parents who need a breather';
   const list = POSTS.filter(p => activeCat === 'All' || p.category === activeCat);
   const [first, ...rest] = list;
   app.innerHTML = `
   <header class="hero fade">
-    <div class="eyebrow">The Pacify Blog</div>
+    <div class="eyebrow">The Pacifyco Blog</div>
     <h1>Notes for parents who <span>need a breather.</span></h1>
     <div class="script">Grab a chai. Stay a while.</div>
   </header>
@@ -226,25 +227,25 @@ function renderList(){
       <div class="cover"><img src="${first.cover}" alt=""></div>
       <div class="body"><span class="tag">${esc(first.category)}</span><h2>${esc(first.title)}</h2><p>${esc(first.excerpt)}</p>
       <div class="meta">${esc(first.date)} · ${esc(first.read)}</div><span class="read">Read the post ${arrow}</span></div>
-    </a>` : `<div class="empty fade"><div class="script" style="font-size: 40px; color: var(--rust); line-height: 1.1">Our first stories are brewing.</div><p style="margin-top: 10px">We’re putting the kettle on and writing up our first posts for parents. Check back soon!</p><a class="btn btn-co" href="/#waitlist" style="margin-top: 22px">Join the Waitlist ${arrow}</a></div>`}
+    </a>` : `<div class="empty fade"><div class="script" style="font-size: 40px; color: var(--rust); line-height: 1.1">Our first stories are brewing.</div><p style="margin-top: 10px">We’re putting the kettle on and writing up our first posts for parents. Check back soon!</p><a class="btn btn-co" href="/#waitlist" style="margin-top: 22px">Register as a Parent ${arrow}</a></div>`}
   ${rest.length ? `<div class="grid">${rest.map(card).join('')}</div>` : ''}`;
   app.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { activeCat = b.dataset.cat; renderList(); }));
 }
 
 function renderPost(p){
-  document.title = p.title + ' — Pacify Blog';
+  document.title = p.title + ' — Pacifyco Blog';
   const others = POSTS.filter(x => x.slug !== p.slug).slice(0, 3);
   app.innerHTML = `
   <article class="article fade">
     <a class="back" href="#"><svg class="ic" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>All posts</a>
     <h1>${esc(p.title)}</h1>
     <p class="lede">${esc(p.excerpt)}</p>
-    <div class="meta"><span class="tag" style="background: var(--blush); color: var(--rust)">${esc(p.category)}</span> ${esc(p.date)} · ${esc(p.read)} · Team Pacify</div>
+    <div class="meta"><span class="tag" style="background: var(--blush); color: var(--rust)">${esc(p.category)}</span> ${esc(p.date)} · ${esc(p.read)} · Team Pacifyco</div>
     <div class="hero-img"><img src="${p.cover}" alt=""></div>
     <div class="prose">${p.body}</div>
     <div class="cta">
       <div><h3>Ready for a little breathing room?</h3><p>Join the waitlist and we’ll call you to find the right sitter.</p></div>
-      <a class="btn btn-co" href="/#waitlist">Join the Waitlist ${arrow}</a>
+      <a class="btn btn-co" href="/#waitlist">Register as a Parent ${arrow}</a>
     </div>
   </article>
   ${others.length ? `<section class="more"><h2>Keep reading</h2><div class="grid">${others.map(card).join('')}</div></section>` : ''}`;
