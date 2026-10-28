@@ -10,6 +10,9 @@ Everything lives inside the oddly-named folder (keep the name as-is, don't renam
 "Pacify — Babysitter service in Bangalore (1)/"
   index.html     — home page (React-templated, see below)
   blog.html      — plain static HTML page, linked from nav
+  blog.css       — shared styles for blog.html and blog/*.html
+  blog/<slug>.html — one static page per blog post (banner image + body); served at /blog/<slug>
+  privacy.html   — privacy policy, linked from every footer
   sitters.html   — plain static HTML page, NEW, not yet linked from index.html nav (work in progress)
   support.js     — GENERATED runtime, do not hand-edit (see below)
   vendor/        — vendored react.js + react-dom.js (loaded via <script src>, no npm)
@@ -37,6 +40,11 @@ LICENSE          — MIT, copyright ReubenJOSTAR
 - Pricing: from ₹199/hour/child + a platform fee.
 - Contact: phone `+91 88488 73841`, email `query.pacifyco@gmail.com`.
 - Waitlist form submits via **EmailJS** (service `service_4ghi7v6`, template `template_hx12jan`, notify email `query.pacifyco@gmail.com`), configured inline in `index.html`'s script block. The EmailJS public key is embedded in the page — this is normal for EmailJS's client-side SDK (it's designed to be public), not a leaked secret.
+
+## Blog posts
+
+- Each post is its own page in `blog/` (copy an existing one). Its card is an entry in the `POSTS` array in `blog.html` (`slug` must match the filename; `card` = card image, banner lives in the post page).
+- Post pages use absolute paths (`/assets/...`, `/blog.css`) because they live in a subfolder.
 
 ## Working conventions
 
